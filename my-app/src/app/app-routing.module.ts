@@ -1,7 +1,6 @@
 import { NgModule } from '@angular/core';
 import { RouterModule, Routes } from '@angular/router';
 import { LoginComponent } from './components/login/login.component';
-import { ChefviewModule } from './chefview/chefview.module';
 import { NavbarComponent } from './navbar/navbar.component';
 
 const routes: Routes = [
