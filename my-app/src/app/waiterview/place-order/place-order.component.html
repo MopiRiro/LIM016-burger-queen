@@ -1,0 +1,54 @@
+<p class="fontBaloo">place-order works!</p>
+<section id="orderDetails" class="cardOrderDetail fontBaloo">
+    <div class="tittleOrderDetails">Order Details <fa-icon [icon]="faCoffee"></fa-icon></div>
+    <div>
+        <label>
+            Customer 
+        </label>
+        <input type="text" placeholder="Customer name">
+    </div>
+    <div>
+        <table>
+            <thead>
+            <tr>
+                <th scope="col">CANT.</th>
+                <th scope="col">ITEM</th>
+                <th scope="col">PRECIO</th>
+                <th scope="col">ElIMINAR</th>
+            </tr>
+            </thead>
+            <tbody>
+            <tr>
+                <th>
+                    <button>+</button>
+                    <p>0</p>
+                    <button>-</button>
+                </th>
+                <td>Producto</td>
+                <td>Precio</td>
+                <td>
+                    <fa-icon [icon]="faTrash"></fa-icon>
+                </td>
+            </tr>
+            </tbody>
+        </table>
+    </div>
+    <div>
+        <div>
+            <label>Sub Total:</label>
+            <p>calSubTot</p>
+        </div>
+        <div>
+            <label>IGV:</label>
+            <p>calIgv</p>
+        </div>
+        <div>
+            <label>Total:</label>
+            <p>calTotal</p>
+        </div>
+    </div>
+    <div>
+        <input type="submit" value="Cancel">
+        <input type="submit" value="Save">
+    </div>
+</section>
