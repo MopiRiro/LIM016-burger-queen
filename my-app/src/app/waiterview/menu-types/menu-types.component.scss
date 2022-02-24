@@ -1,0 +1,25 @@
+.containerMenuTypes{
+    display: flex;
+    flex-direction: row;
+    justify-content: space-evenly;
+}
+.itemTittleContainer{
+    align-items: center;
+}
+
+.itemTittleContainer p{
+    margin-top: 0;
+    margin-bottom: 0rem;
+    padding-top: 0.5rem;
+}
+
+.card{
+    margin: 1rem;
+    padding: 0 1rem;
+}
+
+.form-select {
+    width: 70%;
+    background-color: var(--Salmon);
+    color: var(--White);
+}

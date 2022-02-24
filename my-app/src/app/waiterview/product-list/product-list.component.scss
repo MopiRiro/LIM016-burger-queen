@@ -1,0 +1,14 @@
+.containerProductList {
+    margin: 1rem;
+    display: flex;
+    flex-direction: row;
+    flex-wrap: wrap;
+}
+.containerProduct {
+    margin: 1rem;
+}
+
+.btn {
+    background-color: var(--GreenStrong);
+    color: var(--White);
+}

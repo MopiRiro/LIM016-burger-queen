@@ -5,13 +5,15 @@ import { WaiterviewRoutingModule } from './waiterview-routing.module';
 import { ProductListComponent } from './product-list/product-list.component';
 import { PlaceOrderComponent } from './place-order/place-order.component';
 import { FontAwesomeModule } from '@fortawesome/angular-fontawesome';
+import { MenuTypesComponent } from './menu-types/menu-types.component';
 
 
 @NgModule({
   declarations: [
     WaiterMainviewComponent,
     ProductListComponent,
-    PlaceOrderComponent
+    PlaceOrderComponent,
+    MenuTypesComponent
   ],
   imports: [
     CommonModule,
