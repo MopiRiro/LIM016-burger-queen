@@ -1,4 +1,6 @@
 /* You can add global styles to this file, and also import other style files */
+@import "../node_modules/bootstrap/scss/bootstrap.scss";
+
 * {
   margin: 0;
   padding: 0;
@@ -6,17 +8,17 @@
 }
 
 :root {
-  --GreenStrong: #94D154;
-  --GreenLight: #CDDFA0;
+  --GreenStrong: #94d154;
+  --GreenLight: #cddfa0;
   --Black: #000000;
-  --Salmon: #FFBBAE;
-  --White: #FFFFFF;
+  --Salmon: #ffbbae;
+  --White: #ffffff;
 }
 
 .fontBaloo {
-  font-family: 'Baloo Paaji 2', cursive;
+  font-family: "Baloo Paaji 2", cursive;
 }
 
 .fontGermania {
-  font-family: 'Germania One', sans-serif;
+  font-family: "Germania One", sans-serif;
 }
