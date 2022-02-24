@@ -1,28 +1,30 @@
-<p class="fontBaloo">place-order works!</p>
-<section id="orderDetails" class="cardOrderDetail fontBaloo">
-    <div class="tittleOrderDetails">Order Details <fa-icon [icon]="faCoffee"></fa-icon></div>
-    <div>
-        <label>
-            Customer
-        </label>
-        <input type="text" placeholder="Customer name">
-    </div>
-    <div>
-        <table>
-            <thead>
+<div class="card fontBaloo">
+    <h5 class="card-header">Order Details</h5>
+    <div class="card-body">
+    
+        <div class="containerCustomer">
+            <div class="input-group">
+                <span class="input-group-text">Customer</span>
+                <input type="text" aria-label="First name" class="form-control">
+              </div>
+        </div>
+
+
+      <table class="table table-hover text-center">
+        <thead>
             <tr>
                 <th scope="col">CANT.</th>
                 <th scope="col">ITEM</th>
                 <th scope="col">PRECIO</th>
                 <th scope="col">ElIMINAR</th>
             </tr>
-            </thead>
-            <tbody>
+        </thead>
+        <tbody>
             <tr>
-                <th>
-                    <button>+</button>
-                    <p>0</p>
-                    <button>-</button>
+                <th class="itemsCounterProduct">
+                    <button class="btn btn-primary btn-sm">+</button>
+                    <p class="col">0</p>
+                    <button class="btn btn-primary btn-sm">-</button>
                 </th>
                 <td>Producto</td>
                 <td>Precio</td>
@@ -31,33 +33,19 @@
                 </td>
             </tr>
             </tbody>
-        </table>
-    </div>
-    <div>
-        <div>
-            <label>Sub Total:</label>
-            <p>calSubTot</p>
-        </div>
-        <div>
-            <label>IGV:</label>
-            <p>calIgv</p>
-        </div>
-        <div>
-            <label>Total:</label>
-            <p>calTotal</p>
-        </div>
-    </div>
-    <div>
-        <input type="submit" value="Cancel">
-        <input type="submit" value="Save">
-    </div>
-</section>
+      </table>
 
-<div class="card" style="width: 18rem;">
-  <div class="card-body">
-    <h5 class="card-title">Card title</h5>
-    <h6 class="card-subtitle mb-2 text-muted">Card subtitle</h6>
-    <p class="card-text">Some quick example text to build on the card title and make up the bulk of the card's content.</p>
-    <a href="#" class="card-link">Card link</a> <a href="#" class="card-link">Another link</a>
+      <div class="card" style="width: 18rem;">
+        <ul class="list-group list-group-flush">
+          <li class="list-group-item">SubTotal</li>
+          <li class="list-group-item">Igv</li>
+          <li class="list-group-item">Total</li>
+        </ul>
+      </div>
+
+      <div class="containerButton">
+        <input class="btn btn-primary" type="submit" value="Save">
+        <input class="btn btn-primary" type="reset" value="Cancel">
+      </div>
+    </div>
   </div>
-</div>

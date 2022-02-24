@@ -3,3 +3,40 @@
     color: var(--White);
 }
 
+.card-header{
+    background-color: var(--GreenStrong);
+    color: var(--White);
+}
+
+.containerCustomer {
+    display: flex;
+    flex-direction: row;
+    justify-content: space-evenly;
+}
+
+.card-body{
+    display: flex;
+    flex-direction: column;
+}
+
+.containerButton {
+    display: flex;
+    flex-direction: row;
+    justify-content: space-evenly;
+}
+
+.btn-primary {
+    background-color: var(--GreenStrong);
+    border-color: var(--GreenStrong);
+}
+.itemsCounterProduct{
+    display: flex;
+    flex-direction: row;
+    justify-content: space-evenly;
+}
+
+.input-group-text{
+    background-color: var(--GreenLight);
+    border-color: var(--GreenStrong);
+    color: var(--Black);
+}
