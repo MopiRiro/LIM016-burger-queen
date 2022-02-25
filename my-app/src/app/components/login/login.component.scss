@@ -1,66 +1,64 @@
 html {
-    font-size: 62.5%
+  font-size: 62.5%;
 }
 
-body{
-	font-size: 16px;
+body {
+  font-size: 16px;
 }
 
-.login{
-    background-image: url('../../../assets/fondoMaki.jpg'); 
-    height: 100vh;
-    display: flex;
-    justify-content: center;
-    align-items:center;
-
+.login {
+  background-image: url("../../../assets/fondoMaki.jpg");
+  height: 100vh;
+  display: flex;
+  justify-content: center;
+  align-items: center;
 }
 
 .container {
-    padding: 5rem;
-    margin-left: 45rem;
-    position: fixed;
+  padding: 5rem;
+  margin-left: 45rem;
+  position: fixed;
 }
 
 .form-login {
-    background-color: rgba(0,0,0,0.3);
-    color: #fff;
-    padding:2rem;
-    border-radius: 1.5rem;
-    border-color:#d2d2d2;
-    border-width: 5px;
-    box-shadow:0 1px 0 #cfcfcf;
-    width: 40%;
-
+  background-color: rgba(0, 0, 0, 0.3);
+  color: #fff;
+  padding: 2rem;
+  border-radius: 1.5rem;
+  border-color: #d2d2d2;
+  border-width: 5px;
+  box-shadow: 0 1px 0 #cfcfcf;
+  width: 40%;
 }
 
-h4 { 
- padding-left: 3rem;   
- font-size: 3rem;
- border:0 solid #fff; 
- border-bottom-width:0.02rem;
- padding-bottom:0.5rem;
- text-align: center;
+h4 {
+  padding-left: 3rem;
+  font-size: 3rem;
+  border: 0 solid #fff;
+  border-bottom-width: 0.02rem;
+  padding-bottom: 0.5rem;
+  text-align: center;
 }
 
-#iconCrown{
-    margin: 0.5rem;
-    font-size: 2rem;
-    color: var(--Salmon);
+#iconCrown {
+  margin: 0.5rem;
+  font-size: 2rem;
+  color: var(--Salmon);
 }
 
 .form-control {
-    border-radius: 0.5rem;
-    margin-top: 1.5rem;
-    margin-bottom: 1.5rem;
+  border-radius: 0.5rem;
+  margin-top: 1.5rem;
+  margin-bottom: 1.5rem;
 }
 
 .wrapper {
-    text-align: center;
+  text-align: center;
 }
 
 .btn {
-    border-radius: 0.5rem;
-    background-color: var(--GreenStrong);
-    border-color:var(--GreenStrong);
-    width: 8rem;
+  border-radius: 0.5rem;
+  background-color: var(--GreenStrong);
+  border-color: var(--GreenStrong);
+  width: 8rem;
 }

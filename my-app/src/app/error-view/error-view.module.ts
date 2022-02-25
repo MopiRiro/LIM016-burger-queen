@@ -1,8 +1,8 @@
-import { NgModule } from '@angular/core';
+import { CUSTOM_ELEMENTS_SCHEMA, NgModule } from '@angular/core';
 import { CommonModule } from '@angular/common';
 import { ErrorViewComponent } from './error-view/error-view.component';
 import { ErrorViewRoutingModule } from './error-view-routing.module';
-
+import { FontAwesomeModule } from '@fortawesome/angular-fontawesome';
 
 
 @NgModule({
@@ -11,7 +11,11 @@ import { ErrorViewRoutingModule } from './error-view-routing.module';
   ],
   imports: [
     CommonModule,
-    ErrorViewRoutingModule
+    ErrorViewRoutingModule,
+    FontAwesomeModule
+  ],
+  schemas: [
+    CUSTOM_ELEMENTS_SCHEMA
   ]
 })
 export class ErrorViewModule { }

@@ -15,22 +15,26 @@ const routes: Routes = [
     component:LoginComponent
   },
   {
-  path:'',
+  path:'chef',
   component: NavbarComponent,
   children: [
       {
-        path:'chef',
+        path:'',
         loadChildren: () => import('./chefview/chefview.module').then(m => m.ChefviewModule)
       }
     ]
   },
   {
-    path:'',
+    path:'waiter',
     component: NavbarComponent,
     children: [
       {
-        path:'waiter',
+        path:'',
         loadChildren: () => import('./waiterview/waiterview.module').then(m => m.WaiterviewModule)
+      },
+      {
+        path:'order-status',
+        loadChildren: () => import('./chefview/chefview.module').then(m => m.ChefviewModule)
       }
     ]
   },

@@ -1,4 +1,6 @@
 import { Component, OnInit } from '@angular/core';
+import { faCrown, faUserGroup } from '@fortawesome/free-solid-svg-icons';
+
 
 @Component({
   selector: 'app-navbar',
@@ -6,6 +8,8 @@ import { Component, OnInit } from '@angular/core';
   styleUrls: ['./navbar.component.scss']
 })
 export class NavbarComponent implements OnInit {
+  faCrow = faCrown;
+  faUserGroup = faUserGroup;
 
   constructor() { }
 
