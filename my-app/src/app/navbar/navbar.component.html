@@ -3,7 +3,8 @@
   <ul>
     <li><a href="">Place Order</a></li>
     <li><a href="">Order Status</a></li>
-    <li><a href="">Log Out</a></li>
+    <li><button id="btnLogOut"(click)="logout()"><a href="">Log Out</a></button></li>
+    <li><a href="" *ngIf="userLogged|async as user">{{user.email}}</a></li>
   </ul>
 </header>
 
