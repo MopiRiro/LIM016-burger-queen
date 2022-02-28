@@ -1,0 +1,126 @@
+{
+    "restaurant": "MaquisQueen",
+    "menu": [
+        {
+            "id": "m01",
+            "title": "Menu Personal",
+            "description": "Menus para 1 sola persona",
+            "productos":[
+                {
+                    "id":"p01",
+                    "description":"makis maracuya",
+                    "precio" : "",
+                    "img":"",
+                    "tipo":""
+
+                },
+                {
+                    "id":"p02",
+                    "description":"makis california",
+                    "precio" : "",
+                    "img":"",
+                    "tipo":""
+
+                },
+                {
+                    "id":"p03",
+                    "description":"makis parrillero",
+                    "precio" : "",
+                    "img":"",
+                    "tipo":""
+
+                },
+                {
+                    "id":"p04",
+                    "description":"makis acevichado",
+                    "precio" : "",
+                    "img":"",
+                    "tipo":""
+
+                },
+                {
+                    "id":"p05",
+                    "description":"makis pollo brasa",
+                    "precio" : "",
+                    "img":"",
+                    "tipo":""
+
+                },
+                {
+                    "id":"p06",
+                    "description":"makis lomo salado",
+                    "precio" : "",
+                    "img":"",
+                    "tipo":""
+
+                },
+                {
+                    "id":"p07",
+                    "description":"makis lomo salado",
+                    "precio" : "",
+                    "img":"",
+                    "tipo":""
+
+                }
+
+            ]
+        },
+        {
+            "id": "m02",
+            "title": "Menu Promociones",
+            "description": "Menus en promocion",
+            "productos":[
+                {
+                    "id":"pr01",
+                    "description":"Promocion Makis 2x3 ",
+                    "precio" : "",
+                    "img":"",
+                    "tipo":""
+
+                },
+                {
+                    "id":"pr02",
+                    "description":"makis california",
+                    "precio" : "",
+                    "img":"",
+                    "tipo":""
+
+                },
+                {
+                    "id":"pr03",
+                    "description":"makis parrillero",
+                    "precio" : "",
+                    "img":"",
+                    "tipo":""
+
+                },
+                {
+                    "id":"pr04",
+                    "description":"makis acevichado",
+                    "precio" : "",
+                    "img":"",
+                    "tipo":""
+
+                },
+                {
+                    "id":"pr05",
+                    "description":"makis pollo brasa",
+                    "precio" : "",
+                    "img":"",
+                    "tipo":""
+
+                },
+                {
+                    "id":"pr06",
+                    "description":"makis lomo salado",
+                    "precio" : "",
+                    "img":"",
+                    "tipo":""
+
+                }
+
+            ]
+        }
+    ]
+
+}
