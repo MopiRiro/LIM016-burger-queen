@@ -1,4 +1,5 @@
 import { Component, OnInit } from '@angular/core';
+import * as data from '../../../data/data.json';
 
 @Component({
   selector: 'app-waiter-mainview',
@@ -7,9 +8,11 @@ import { Component, OnInit } from '@angular/core';
 })
 export class WaiterMainviewComponent implements OnInit {
 
+
   constructor() { }
 
   ngOnInit(): void {
+    console.log(data);
   }
 
 }

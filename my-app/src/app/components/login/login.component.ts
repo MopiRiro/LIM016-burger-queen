@@ -20,6 +20,7 @@ export class LoginComponent implements OnInit {
     const {email,password} = this.user;
     this.authService.login(email,password).then(res =>{ 
       console.log('Se logeo con exito Firebase', res);
+      window.location.pathname="/chef";
     });
     // console.log(this.user);
   }
