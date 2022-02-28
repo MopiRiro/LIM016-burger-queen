@@ -5,11 +5,14 @@ import { Component, OnInit } from '@angular/core';
   templateUrl: './menu-types.component.html',
   styleUrls: ['./menu-types.component.scss']
 })
+
+
 export class MenuTypesComponent implements OnInit {
 
   constructor() { }
 
   ngOnInit(): void {
+    console.log(this);
   }
 
 }

@@ -1,25 +1,20 @@
 {
-    "restaurant": "MaquisQueen",
-    "menu": [
-        {
-            "id": "m01",
-            "title": "Menu Personal",
-            "description": "Menus para 1 sola persona",
-            "productos":[
+    "productos":[
                 {
                     "id":"p01",
                     "description":"makis maracuya",
                     "precio" : "",
                     "img":"",
-                    "tipo":""
-
+                    "tipo":"",
+                    "menu": "personal"
                 },
                 {
                     "id":"p02",
                     "description":"makis california",
                     "precio" : "",
                     "img":"",
-                    "tipo":""
+                    "tipo":"",
+                    "menu": "personal"
 
                 },
                 {
@@ -27,7 +22,8 @@
                     "description":"makis parrillero",
                     "precio" : "",
                     "img":"",
-                    "tipo":""
+                    "tipo":"",
+                    "menu": "personal"
 
                 },
                 {
@@ -35,7 +31,8 @@
                     "description":"makis acevichado",
                     "precio" : "",
                     "img":"",
-                    "tipo":""
+                    "tipo":"",
+                    "menu": "personal"
 
                 },
                 {
@@ -43,7 +40,8 @@
                     "description":"makis pollo brasa",
                     "precio" : "",
                     "img":"",
-                    "tipo":""
+                    "tipo":"",
+                    "menu": "personal"
 
                 },
                 {
@@ -51,7 +49,8 @@
                     "description":"makis lomo salado",
                     "precio" : "",
                     "img":"",
-                    "tipo":""
+                    "tipo":"",
+                    "menu": "personal"
 
                 },
                 {
@@ -59,68 +58,62 @@
                     "description":"makis lomo salado",
                     "precio" : "",
                     "img":"",
-                    "tipo":""
-
-                }
-
-            ]
-        },
-        {
-            "id": "m02",
-            "title": "Menu Promociones",
-            "description": "Menus en promocion",
-            "productos":[
+                    "tipo":"",
+                    "menu": "promociones"
+                },
                 {
-                    "id":"pr01",
+                    "id":"p08",
                     "description":"Promocion Makis 2x3 ",
                     "precio" : "",
                     "img":"",
-                    "tipo":""
-
+                    "tipo":"",
+                    "menu": "promociones"
                 },
                 {
-                    "id":"pr02",
+                    "id":"p09",
                     "description":"makis california",
                     "precio" : "",
                     "img":"",
-                    "tipo":""
+                    "tipo":"",
+                    "menu": "promociones"
 
                 },
                 {
-                    "id":"pr03",
+                    "id":"p10",
                     "description":"makis parrillero",
                     "precio" : "",
                     "img":"",
-                    "tipo":""
+                    "tipo":"",
+                    "menu": "promociones"
 
                 },
                 {
-                    "id":"pr04",
+                    "id":"p11",
                     "description":"makis acevichado",
                     "precio" : "",
                     "img":"",
-                    "tipo":""
+                    "tipo":"",
+                    "menu": "promociones"
 
                 },
                 {
-                    "id":"pr05",
+                    "id":"p12",
                     "description":"makis pollo brasa",
                     "precio" : "",
                     "img":"",
-                    "tipo":""
+                    "tipo":"",
+                    "menu": "promociones"
 
                 },
                 {
-                    "id":"pr06",
+                    "id":"p13",
                     "description":"makis lomo salado",
                     "precio" : "",
                     "img":"",
-                    "tipo":""
+                    "tipo":"",
+                    "menu": "promociones"
 
                 }
-
-            ]
-        }
     ]
 
 }
