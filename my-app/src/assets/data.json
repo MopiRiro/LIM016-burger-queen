@@ -1,0 +1,151 @@
+{
+    "productos":[
+                {
+                    "id":"p01",
+                    "description":"makis maracuya",
+                    "precio" : "23",
+                    "img":"",
+                    "tipo":"principal",
+                    "menu":["personal"]
+                },
+                {
+                    "id":"p02",
+                    "description":"makis california",
+                    "precio" : "23",
+                    "img":"",
+                    "tipo":"principal",
+                    "menu":["personal"]
+
+                },
+                {
+                    "id":"p03",
+                    "description":"makis parrillero",
+                    "precio" : "23",
+                    "img":"",
+                    "tipo":"principal",
+                    "menu":["personal"]
+
+                },
+                {
+                    "id":"p04",
+                    "description":"makis acevichado",
+                    "precio" : "23",
+                    "img":"",
+                    "tipo":"principal",
+                    "menu":["personal"]
+
+                },
+                {
+                    "id":"p05",
+                    "description":"makis pollo brasa",
+                    "precio" : "23",
+                    "img":"",
+                    "tipo":"principal",
+                    "menu":["personal"]
+
+                },
+                {
+                    "id":"p06",
+                    "description":"makis lomo salado",
+                    "precio" : "23",
+                    "img":"",
+                    "tipo":"principal",
+                    "menu":["personal"]
+
+                },
+                {
+                    "id":"p07",
+                    "description":"Paquete 24 + 6 alitas",
+                    "precio" : "45",
+                    "img":"",
+                    "tipo":"principal",
+                    "menu":["promociones"]
+                },
+                {
+                    "id":"p08",
+                    "description":"Promocion Makis 2x3 ",
+                    "precio" : "28",
+                    "img":"",
+                    "tipo":"principal",
+                    "menu":"promociones"
+                },
+                {
+                    "id":"p09",
+                    "description":"Promo: 2 Sandwich Furai",
+                    "precio" : "35",
+                    "img":"",
+                    "tipo":"principal",
+                    "menu":"promociones"
+
+                },
+                {
+                    "id":"p10",
+                    "description":"Paquete 84 + 6 alitas",
+                    "precio" : "112",
+                    "img":"",
+                    "tipo":"principal",
+                    "menu":"promociones"
+
+                },
+                {
+                    "id":"p11",
+                    "description":"Paquete 48 + 6 alitas",
+                    "precio" : "74.90",
+                    "img":"",
+                    "tipo":"principal",
+                    "menu":"promociones"
+
+                },
+                {
+                    "id":"p12",
+                    "description":"Paquete 36",
+                    "precio" : "54",
+                    "img":"",
+                    "tipo":"principal",
+                    "menu":"promociones"
+
+                },
+                {
+                    "id":"p13",
+                    "description":"Paquete 48",
+                    "precio" : "62",
+                    "img":"",
+                    "tipo":"principal",
+                    "menu":"promociones"
+
+                },
+                {
+                    "id":"p14",
+                    "description":"Salsa ostion",
+                    "precio" : "4",
+                    "img":"",
+                    "tipo":"adicional",
+                    "menu":["promociones","personal"]
+
+                },
+                {
+                    "id":"p15",
+                    "description":"Salsa acevichada",
+                    "precio" : "4",
+                    "img":"",
+                    "tipo":"adicional",
+                    "menu":["promociones", "personal"]
+
+                }
+    ],
+    "users": [
+        {
+            "id":"u01",
+            "name":"Alpi",
+            "rol":"chef",
+            "email":"chef@makisqueen.com"
+        },
+        {
+            "id":"u02",
+            "name":"Dani",
+            "rol":"waiter",
+            "email":"waiter@makisqueen.com"
+        }
+    ]
+    
+}
