@@ -1,5 +1,6 @@
 import { Component, OnInit } from '@angular/core';
-import * as data from '../../../data/data.json';
+import { DataService } from '../../services/data.service';
+
 
 @Component({
   selector: 'app-waiter-mainview',
@@ -9,10 +10,14 @@ import * as data from '../../../data/data.json';
 export class WaiterMainviewComponent implements OnInit {
 
 
-  constructor() { }
+  constructor(
+    private dataService : DataService) 
+    { }
 
   ngOnInit(): void {
-    console.log(data);
+    this.dataService.getJSON().subscribe(data=>{
+      console.log(data);
+    })
   }
 
 }
