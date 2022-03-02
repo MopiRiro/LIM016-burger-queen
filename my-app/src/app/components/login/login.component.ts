@@ -12,22 +12,23 @@ export class LoginComponent implements OnInit {
   faUser = faUserGroup;
 
   user = {
-    email:'', 
+    email:'',
     password: '',
   }
 
   Login(){
     const {email,password} = this.user;
-    this.authService.login(email,password).then(res =>{ 
+    this.authService.login(email,password).then(res =>{
       console.log('Se logeo con exito Firebase', res);
-      window.location.pathname="/chef";
+      if(email === "chef@makisqueen.com") {
+        window.location.pathname="/chef";
+      }else if(email === "waiter@makisqueen.com") {
+        window.location.pathname="/waiter";
+      }
     });
-    // console.log(this.user);
   }
 
-  constructor(private authService: AuthService) {
-
-   }
+  constructor(private authService: AuthService) {}
 
   ngOnInit(): void {
   }
