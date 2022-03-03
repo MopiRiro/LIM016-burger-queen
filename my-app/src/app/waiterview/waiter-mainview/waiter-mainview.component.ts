@@ -11,7 +11,7 @@ export class WaiterMainviewComponent implements OnInit {
 
 
   constructor(
-    private dataService : DataService) 
+    private dataService : DataService)
     { }
 
   ngOnInit(): void {

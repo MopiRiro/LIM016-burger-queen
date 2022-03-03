@@ -3,7 +3,7 @@
     Makis Queen<fa-icon [icon]="faCrow" id="iconCrown"></fa-icon>
   </h1>
   <ul>
-    <li><a routerLink="/waiter">Place Order</a></li>
+    <li><a routerLink="/waiter" *ngIf="roleWaiter">Place Order</a></li>
     <li><a routerLink="/waiter/order-status">Order Status</a></li>
     <li>
       <button id="btnLogOut" (click)="logout()"><a href="">Log Out</a></button>
