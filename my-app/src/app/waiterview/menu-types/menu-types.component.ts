@@ -1,4 +1,6 @@
 import { Component, OnInit } from '@angular/core';
+import { DataService } from '../../services/data.service';
+
 
 @Component({
   selector: 'app-menu-types',
@@ -9,9 +11,22 @@ import { Component, OnInit } from '@angular/core';
 
 export class MenuTypesComponent implements OnInit {
 
-  constructor() { }
+  constructor(
+    private dataService : DataService) { }
 
   ngOnInit(): void {
+    
+    
   }
+
+  getTypeMenu(){
+    this.dataService.getJSON().subscribe(data=>{
+      // console.log(data);
+      const {productos} = data;
+      console.log(productos);  
+    })
+  }
+
+  
 
 }

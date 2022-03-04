@@ -4,7 +4,7 @@
                     "id":"p01",
                     "description":"makis maracuya",
                     "precio" : "23",
-                    "img":"",
+                    "img":"https://cdn.cuponidad.pe/images/Deals/akita-makis1.jpg",
                     "tipo":"principal",
                     "menu":["personal"]
                 },

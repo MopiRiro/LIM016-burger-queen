@@ -12,8 +12,11 @@ export class DataService {
     this.getJSON().subscribe(data => {
     });
 }
+
 public getJSON(): Observable<any> {
   return this.http.get("../assets/data.json");
 }
+
+
 
 }
