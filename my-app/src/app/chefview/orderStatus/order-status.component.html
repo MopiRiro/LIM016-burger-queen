@@ -20,11 +20,12 @@
       <p class="tiempo"></p>
     </div>
     <div class="card-body">
-      <select class="form-select form-select-sm">
+      <select class="form-select form-select-sm" *ngIf="roleChef">
         <option selected>Nuevo</option>
         <option value="1">Aceptado/Pendiente</option>
         <option value="2">Listo</option>
       </select>
+      <p *ngIf="roleWaiter">Order Status</p>
       <table class="table table-striped table-sm">
         <thead>
           <tr>
@@ -76,11 +77,12 @@
       <p class="tiempo"></p>
     </div>
     <div class="card-body">
-      <select class="form-select form-select-sm">
+      <select class="form-select form-select-sm" *ngIf="roleChef">
         <option selected>Nuevo</option>
         <option value="1">Aceptado/Pendiente</option>
         <option value="2">Listo</option>
       </select>
+      <p *ngIf="roleWaiter">Order Status</p>
       <table class="table table-striped table-sm">
         <thead>
           <tr>
@@ -132,11 +134,12 @@
       <p class="tiempo"></p>
     </div>
     <div class="card-body">
-      <select class="form-select form-select-sm">
+      <select class="form-select form-select-sm" *ngIf="roleChef">
         <option selected>Nuevo</option>
         <option value="1">Aceptado/Pendiente</option>
         <option value="2">Listo</option>
       </select>
+      <p *ngIf="roleWaiter">Order Status</p>
       <table class="table table-striped table-sm">
         <thead>
           <tr>

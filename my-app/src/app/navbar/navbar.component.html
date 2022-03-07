@@ -4,6 +4,8 @@
   </h1>
   <div class="dropdown">
     <button class="btn btn-secondary dropdown-toggle" type="button" id="dropdownMenuButton1" data-bs-toggle="dropdown" aria-expanded="false" *ngIf="userLogged">
+      <img style="border-radius: 100%;" *ngIf="roleWaiter" src="../../assets/waiter.png" alt="" width="20" height="20">
+      <img style="border-radius: 100%;" *ngIf="roleChef" src="../../assets/chef.png" alt="" width="20" height="20">
       {{ dataUser.name }}
     </button>
     <ul class="dropdown-menu" aria-labelledby="dropdownMenuButton1">

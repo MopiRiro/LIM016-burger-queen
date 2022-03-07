@@ -41,7 +41,6 @@ export class LoginComponent implements OnInit {
     this.dataService.getJSON().subscribe(data=>{
       const userLog = this.authService.getUserLogged();
       userLog.subscribe((res: any) => {
-        // Disparador
         const userEmail = res.email;
         const usersData = data.users;
         console.log(userEmail);

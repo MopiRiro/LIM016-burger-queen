@@ -1,11 +1,11 @@
-<div class="card fontBaloo">
+<form class="card fontBaloo" (ngSubmit)="sendOrder()">
     <h5 class="card-header">Order Details</h5>
     <div class="card-body">
-    
+
         <div class="containerCustomer">
             <div class="input-group">
                 <span class="input-group-text">Customer</span>
-                <input type="text" aria-label="First name" class="form-control">
+                <input type="text" aria-label="First name" class="form-control" [(ngModel)]="clientName" [ngModelOptions]="{standalone: true}">
               </div>
         </div>
 
@@ -44,8 +44,8 @@
       </div>
 
       <div class="containerButton">
-        <input class="btn btn-primary" type="submit" value="Save">
+        <input class="btn btn-primary" type="submit" value="Save" (ngSubmit)="sendOrder()" *ngIf="clientName">
         <input class="btn btn-primary" type="reset" value="Cancel">
       </div>
     </div>
-  </div>
+  </form>
