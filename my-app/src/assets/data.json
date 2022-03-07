@@ -4,7 +4,7 @@
                     "id":"p01",
                     "description":"makis maracuya",
                     "precio" : "23",
-                    "img":"",
+                    "img":"https://cdn.cuponidad.pe/images/Deals/akita-makis1.jpg",
                     "tipo":"principal",
                     "menu":["personal"]
                 },
@@ -67,7 +67,7 @@
                     "precio" : "28",
                     "img":"",
                     "tipo":"principal",
-                    "menu":"promociones"
+                    "menu":["promociones"]
                 },
                 {
                     "id":"p09",
@@ -75,7 +75,7 @@
                     "precio" : "35",
                     "img":"",
                     "tipo":"principal",
-                    "menu":"promociones"
+                    "menu":["promociones"]
 
                 },
                 {
@@ -84,7 +84,7 @@
                     "precio" : "112",
                     "img":"",
                     "tipo":"principal",
-                    "menu":"promociones"
+                    "menu":["promociones"]
 
                 },
                 {
@@ -93,7 +93,7 @@
                     "precio" : "74.90",
                     "img":"",
                     "tipo":"principal",
-                    "menu":"promociones"
+                    "menu":["promociones"]
 
                 },
                 {
@@ -102,7 +102,7 @@
                     "precio" : "54",
                     "img":"",
                     "tipo":"principal",
-                    "menu":"promociones"
+                    "menu":["promociones"]
 
                 },
                 {
@@ -111,7 +111,7 @@
                     "precio" : "62",
                     "img":"",
                     "tipo":"principal",
-                    "menu":"promociones"
+                    "menu":["promociones"]
 
                 },
                 {
@@ -129,8 +129,7 @@
                     "precio" : "4",
                     "img":"",
                     "tipo":"adicional",
-                    "menu":["promociones", "personal"]
-
+                    "menu":["promociones","personal"]
                 }
     ],
     "users": [

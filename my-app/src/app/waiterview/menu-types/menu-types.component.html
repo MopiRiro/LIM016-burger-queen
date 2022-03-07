@@ -3,10 +3,11 @@
         <div class="itemTittleContainer" >
         <p>Select the menu</p>
         </div>
-        <select class="form-select" aria-label="Default select example">
+        <select (ngModel)="selectedOption" class="form-select" aria-label="Default select example">
             <option selected>Open this select menu</option>
-            <option value="personal">Personal</option>
-            <option value="promociones">Promociones</option>
+            <option *ngFor="let o of options">
+                {{o.name}}
+             </option>
         </select>
     </div>
   </div>
