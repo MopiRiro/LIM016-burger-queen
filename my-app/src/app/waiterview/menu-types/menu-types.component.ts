@@ -9,24 +9,60 @@ import { DataService } from '../../services/data.service';
 })
 
 
+
 export class MenuTypesComponent implements OnInit {
+
+  selectedOption: string = '';
+  printedOption: string = ''; 
+
+  public options = [
+    { name:'', value:''}
+  ]
+
+  
+  print() {
+    this.printedOption = this.selectedOption;
+  }
 
   constructor(
     private dataService : DataService) { }
 
   ngOnInit(): void {
-    
-    
-  }
-
-  getTypeMenu(){
     this.dataService.getJSON().subscribe(data=>{
       // console.log(data);
       const {productos} = data;
-      console.log(productos);  
-    })
+      // console.log(productos);
+      const arr:any = [];
+      productos.forEach((producto:any) => {
+        producto.menu.forEach((itemMenu:any)=>{
+        //  this.options.push({name:itemMenu, value:itemMenu});
+          return arr.push(itemMenu);
+        })
+      });
+
+     const p = arr.filter((valor:any, indice:any) => {
+        return arr.indexOf(valor) === indice;
+      }
+    );
+
+     p.forEach((itemMenu:any)=>{
+      this.options.push({name:itemMenu, value:itemMenu});
+      });
+    
+  
+
+      console.log(p);
+
+      // this.options.push({name:"option 3", value:3});
+      // const [ , , ,menu] = productos.menu;
+      // console.log(menu);
+      // const arrayMenus = productos.forEach(
+      //   (x:any) => console.log(x.menu),
+      //   );
+    });
   }
 
+  
   
 
 }
