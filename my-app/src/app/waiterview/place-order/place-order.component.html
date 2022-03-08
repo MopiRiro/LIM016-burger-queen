@@ -1,4 +1,4 @@
-<form class="card fontBaloo" (ngSubmit)="sendOrder()">
+<form class="card fontBaloo">
     <h5 class="card-header">Order Details</h5>
     <div class="card-body">
 
@@ -16,18 +16,18 @@
                 <th scope="col">CANT.</th>
                 <th scope="col">ITEM</th>
                 <th scope="col">PRECIO</th>
-                <th scope="col">ElIMINAR</th>
+                <th scope="col"></th>
             </tr>
         </thead>
         <tbody>
-            <tr>
+            <tr *ngFor="let product of productList">
                 <th class="itemsCounterProduct">
-                    <button class="btn btn-primary btn-sm">+</button>
-                    <p class="col">0</p>
-                    <button class="btn btn-primary btn-sm">-</button>
+                    <button class="btn btn-primary btn-sm btnCant" (click)="subtractCnt()">-</button>
+                    <p class="col">{{cant}}</p>
+                    <button class="btn btn-primary btn-sm btnCant" (click)="addCnt()">+</button>
                 </th>
-                <td>Producto</td>
-                <td>Precio</td>
+                <td>{{productList.item}}</td>
+                <td>{{productList.price}}.00</td>
                 <td>
                     <fa-icon [icon]="faTrash"></fa-icon>
                 </td>
@@ -37,15 +37,15 @@
 
       <div class="card" style="width: 18rem;">
         <ul class="list-group list-group-flush">
-          <li class="list-group-item">SubTotal</li>
-          <li class="list-group-item">Igv</li>
-          <li class="list-group-item">Total</li>
+          <li class="list-group-item">SubTotal: {{subTotal}}.00</li>
+          <li class="list-group-item">Igv: {{igv}}</li>
+          <li class="list-group-item">Total: {{total}}.00</li>
         </ul>
       </div>
 
       <div class="containerButton">
-        <input class="btn btn-primary" type="submit" value="Save" (ngSubmit)="sendOrder()" *ngIf="clientName">
-        <input class="btn btn-primary" type="reset" value="Cancel">
+        <input class="btn btn-primary" type="submit" value="Save" (click)="sendOrder()" *ngIf="clientName">
+        <input class="btn btn-primary" type="reset" value="Cancel" (click)="cancelOrder()">
       </div>
     </div>
   </form>
