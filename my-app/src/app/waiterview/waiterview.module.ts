@@ -7,6 +7,7 @@ import { PlaceOrderComponent } from './place-order/place-order.component';
 import { FontAwesomeModule } from '@fortawesome/angular-fontawesome';
 import { MenuTypesComponent } from './menu-types/menu-types.component';
 import { FormsModule } from '@angular/forms';
+import { SharedModule } from '../shared/shared.module';
 
 @NgModule({
   declarations: [
@@ -19,7 +20,8 @@ import { FormsModule } from '@angular/forms';
     CommonModule,
     WaiterviewRoutingModule,
     FontAwesomeModule,
-    FormsModule
+    FormsModule,
+    SharedModule
   ]
 })
 export class WaiterviewModule { }
