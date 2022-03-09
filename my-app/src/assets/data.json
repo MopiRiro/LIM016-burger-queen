@@ -135,16 +135,22 @@
     "users": [
         {
             "id":"u01",
-            "name":"Alpi",
+            "name":"Luz",
             "rol":"chef",
             "email":"chef@makisqueen.com"
         },
         {
             "id":"u02",
-            "name":"Dani",
+            "name":"Pili",
             "rol":"waiter",
             "email":"waiter@makisqueen.com"
-        }
+        },
+        {
+          "id":"u03",
+          "name":"Jeane",
+          "rol":"waiter",
+          "email":"jeane@makisqueen.com"
+      }
     ]
 
 }
