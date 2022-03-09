@@ -1,4 +1,6 @@
 import { Component, OnInit } from '@angular/core';
+import { DataService } from '../../services/data.service';
+
 
 @Component({
   selector: 'app-product-list',
@@ -6,10 +8,27 @@ import { Component, OnInit } from '@angular/core';
   styleUrls: ['./product-list.component.scss']
 })
 export class ProductListComponent implements OnInit {
-
-  constructor() { }
+  public productos: any[] = [];
+ 
+  
+  constructor(private dataService : DataService) { }
 
   ngOnInit(): void {
+    this.getAllProducts();
+  }
+
+ 
+  getAllProducts(){
+    this.dataService.getJSON().subscribe(data=>{
+      const {productos} = data;
+      this.productos = productos;
+      // productos.forEach((producto:any) => {
+      //   const [id,description,precio,img,tipo,menu] = productos;
+      //   console.log(id);
+      //   console.log(description);
+      // });
+    });
+   
   }
 
 }
