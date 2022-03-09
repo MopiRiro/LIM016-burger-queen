@@ -16,7 +16,7 @@ export class MenuTypesComponent implements OnInit {
   printedOption: string = ''; 
 
   public options = [
-    { name:'', value:''}
+    { name:'Open this select menu' , value:''}
   ]
 
   
@@ -32,26 +32,24 @@ export class MenuTypesComponent implements OnInit {
       // console.log(data);
       const {productos} = data;
       // console.log(productos);
-      const arr:any = [];
+      const arrayMenuType:any = [];
       productos.forEach((producto:any) => {
         producto.menu.forEach((itemMenu:any)=>{
         //  this.options.push({name:itemMenu, value:itemMenu});
-          return arr.push(itemMenu);
+          return arrayMenuType.push(itemMenu);
         })
       });
 
-     const p = arr.filter((valor:any, indice:any) => {
-        return arr.indexOf(valor) === indice;
-      }
-    );
+      const filterArrayMenuType = arrayMenuType.filter((valor:any, indice:any) => {
+          return arrayMenuType.indexOf(valor) === indice;
+        }
+      );
 
-     p.forEach((itemMenu:any)=>{
-      this.options.push({name:itemMenu, value:itemMenu});
-      });
-    
-  
+      filterArrayMenuType.forEach((itemMenu:any)=>{
+        this.options.push({name:itemMenu, value:itemMenu});
+        });
 
-      console.log(p);
+      // console.log(filterArrayMenuType);
 
       // this.options.push({name:"option 3", value:3});
       // const [ , , ,menu] = productos.menu;

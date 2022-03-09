@@ -4,7 +4,6 @@
         <p>Select the menu</p>
         </div>
         <select (ngModel)="selectedOption" class="form-select" aria-label="Default select example">
-            <option selected>Open this select menu</option>
             <option *ngFor="let o of options">
                 {{o.name}}
              </option>

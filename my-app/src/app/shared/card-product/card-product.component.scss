@@ -1,0 +1,18 @@
+.btn {
+    background-color: var(--GreenStrong);
+    color: var(--White);
+}
+
+.card-body{
+    display: flex;
+    flex-direction: column;
+    
+}
+.btnContainerAdd {
+    display: flex;
+    justify-content: center;
+}
+.card-img-top{
+    height: 10rem;
+    object-fit: cover;
+}

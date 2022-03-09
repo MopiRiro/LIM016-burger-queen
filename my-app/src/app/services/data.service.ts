@@ -6,7 +6,7 @@ import { BehaviorSubject, Observable } from 'rxjs';
   providedIn: 'root'
 })
 export class DataService {
-  @Output() disparador:BehaviorSubject<any> = new BehaviorSubject( {});
+  @Output() disparador:BehaviorSubject<any> = new BehaviorSubject({});
 
   constructor(private http: HttpClient) {
     this.getJSON().subscribe(data => {
