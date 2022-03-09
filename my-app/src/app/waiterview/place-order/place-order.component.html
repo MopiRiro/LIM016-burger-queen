@@ -10,30 +10,7 @@
         </div>
 
 
-      <table class="table table-hover text-center">
-        <thead>
-            <tr>
-                <th scope="col">CANT.</th>
-                <th scope="col">ITEM</th>
-                <th scope="col">PRECIO</th>
-                <th scope="col"></th>
-            </tr>
-        </thead>
-        <tbody>
-            <tr *ngFor="let product of productList">
-                <th class="itemsCounterProduct">
-                    <button class="btn btn-primary btn-sm btnCant" (click)="subtractCnt()">-</button>
-                    <p class="col">{{cant}}</p>
-                    <button class="btn btn-primary btn-sm btnCant" (click)="addCnt()">+</button>
-                </th>
-                <td>{{productList.item}}</td>
-                <td>{{productList.price}}.00</td>
-                <td>
-                    <fa-icon [icon]="faTrash"></fa-icon>
-                </td>
-            </tr>
-            </tbody>
-      </table>
+      <app-shopping-list></app-shopping-list>
 
       <div class="card" style="width: 18rem;">
         <ul class="list-group list-group-flush">

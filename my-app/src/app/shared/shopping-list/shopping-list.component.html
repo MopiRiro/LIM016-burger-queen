@@ -1,0 +1,24 @@
+<table class="table table-hover text-center">
+  <thead>
+      <tr>
+          <th scope="col">CANT.</th>
+          <th scope="col">ITEM</th>
+          <th scope="col">PRECIO</th>
+          <th scope="col"></th>
+      </tr>
+  </thead>
+  <tbody>
+      <tr>
+          <th class="itemsCounterProduct">
+              <button class="btn btn-primary btn-sm btnCant" (click)="subtractCnt()">-</button>
+              <p class="col">{{cant}}</p>
+              <button class="btn btn-primary btn-sm btnCant" (click)="addCnt()">+</button>
+          </th>
+          <td>Producto 1</td>
+          <td>23.00</td>
+          <td>
+              <fa-icon [icon]="faTrash"></fa-icon>
+          </td>
+      </tr>
+      </tbody>
+</table>

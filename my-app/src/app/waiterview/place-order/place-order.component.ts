@@ -1,13 +1,10 @@
 import { Component, OnInit } from '@angular/core';
-import { faCoffee, faTrashAlt } from '@fortawesome/free-solid-svg-icons';
 @Component({
   selector: 'app-place-order',
   templateUrl: './place-order.component.html',
   styleUrls: ['./place-order.component.scss']
 })
 export class PlaceOrderComponent implements OnInit {
-  faCoffee = faCoffee;
-  faTrash = faTrashAlt;
 
   clientName:any = "";
   cant:number = 0;
@@ -31,15 +28,6 @@ export class PlaceOrderComponent implements OnInit {
   constructor() { }
 
   ngOnInit(): void {
-    console.log(this.productList.item)
-  }
-
-  addCnt(){
-    this.cant += 1;
-  }
-
-  subtractCnt(){
-    this.cant -= 1;
   }
 
   sendOrder(){
