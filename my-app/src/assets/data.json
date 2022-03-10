@@ -90,7 +90,7 @@
                 {
                     "id":"p11",
                     "description":"Paquete 48 + 6 alitas",
-                    "precio" : "74.90",
+                    "precio" : "74",
                     "img":"https://media-cdn.tripadvisor.com/media/photo-s/08/41/db/2c/makis.jpg",
                     "tipo":"principal",
                     "menu":["Promociones"]
