@@ -9,16 +9,37 @@
               </div>
         </div>
 
-
-      <app-shopping-list></app-shopping-list>
-
-      <div class="card" style="width: 18rem;">
-        <ul class="list-group list-group-flush">
-          <li class="list-group-item">SubTotal: {{subTotal}}.00</li>
-          <li class="list-group-item">Igv: {{igv}}</li>
-          <li class="list-group-item">Total: {{total}}.00</li>
-        </ul>
-      </div>
+        <table class="table table-hover text-center">
+          <thead>
+              <tr>
+                  <th scope="col">CANT.</th>
+                  <th scope="col">ITEM</th>
+                  <th scope="col">PRECIO</th>
+                  <th scope="col"></th>
+              </tr>
+          </thead>
+          <tbody>
+              <tr *ngFor="let product of orderList">
+                  <th class="itemsCounterProduct">
+                      <button class="btn btn-primary btn-sm btnCant" (click)="changeAmount(-base, product)">-</button>
+                      <p class="col">{{product.amount}}</p>
+                      <button class="btn btn-primary btn-sm btnCant" (click)="changeAmount(base, product)">+</button>
+                  </th>
+                  <td>{{product?.data.data.description}}</td>
+                  <td>{{product.amount === 1 ?product?.data.data.precio : product?.data.data.precio * product.amount}}.00</td>
+                  <td>
+                      <fa-icon [icon]="faTrash" (click)="deleteItem(product)"></fa-icon>
+                  </td>
+              </tr>
+              </tbody>
+        </table>
+        <div class="card" style="width: 18rem;">
+          <ul class="list-group list-group-flush">
+            <li class="list-group-item">SubTotal: {{subTotal}}.00</li>
+            <li class="list-group-item">Igv: {{igv}}</li>
+            <li class="list-group-item">Total: {{total}}.00</li>
+          </ul>
+        </div>
 
       <div class="containerButton">
         <input class="btn btn-primary" type="submit" value="Save" (click)="sendOrder()" *ngIf="clientName">
