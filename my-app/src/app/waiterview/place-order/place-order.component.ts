@@ -16,7 +16,8 @@ export class PlaceOrderComponent implements OnInit {
 
   public orderList:Array<any> = []
 
-  clientName:any = "";
+  clientName:string = "";
+  tableNumber:string = "";
   price:number = 0;
   base: number = 1;
 
@@ -76,21 +77,24 @@ export class PlaceOrderComponent implements OnInit {
         toast.addEventListener('mouseleave', Swal.resumeTimer)
       }
     })
-    
     Toast.fire({
       icon: 'success',
       title: 'Registered Order'
     })
-
     console.log(this.clientName);
     console.log(this.base);
     this.clientName = "";
-    this.base = 0;
+    this.tableNumber = "";
+    this.orderList = [];
+    this.subTotal = 0;
+    this.igv = 0;
+    this.total = 0;
   }
 
   cancelOrder(){
     let clean  = () => {
       this.clientName = "";
+      this.tableNumber = "";
       this.orderList = [];
       this.base = 0;
       this.subTotal = 0;
@@ -111,7 +115,7 @@ export class PlaceOrderComponent implements OnInit {
       /* Read more about isConfirmed, isDenied below */
       if (result.isConfirmed) {
         Swal.fire({
-          text:'Canceled Order!', 
+          text:'Canceled Order!',
           icon: 'success',
           confirmButtonColor:'#94d154'
         }).then(clean)
@@ -119,6 +123,8 @@ export class PlaceOrderComponent implements OnInit {
         Swal.fire('Changes are not saved', '', 'info')
       }
     })
-    
+
   }
 }
+//fechaCreacion: new Date
+//fechaTerminada: new Date

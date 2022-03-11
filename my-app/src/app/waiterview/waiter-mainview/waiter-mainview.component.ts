@@ -16,7 +16,7 @@ export class WaiterMainviewComponent implements OnInit {
 
   ngOnInit(): void {
     this.dataService.getJSON().subscribe(data=>{
-      console.log(data);
+      // console.log(data);
     })
   }
 

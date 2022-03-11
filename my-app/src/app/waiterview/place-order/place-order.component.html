@@ -6,7 +6,9 @@
             <div class="input-group">
                 <span class="input-group-text">Customer</span>
                 <input type="text" aria-label="First name" class="form-control" [(ngModel)]="clientName" [ngModelOptions]="{standalone: true}">
-              </div>
+                <span class="input-group-text">Table</span>
+                <input type="text" aria-label="First name" class="form-control" [(ngModel)]="tableNumber" [ngModelOptions]="{standalone: true}">
+            </div>
         </div>
 
         <table class="table table-hover text-center">
@@ -26,7 +28,7 @@
                       <button class="btn btn-primary btn-sm btnCant" (click)="changeAmount(base, product)">+</button>
                   </th>
                   <td>{{product?.data.data.description}}</td>
-                  <td>{{product.amount === 1 ?product?.data.data.precio : product?.data.data.precio * product.amount}}.00</td>
+                  <td>{{product?.data.data.precio * product.amount}}.00</td>
                   <td>
                       <fa-icon [icon]="faTrash" (click)="deleteItem(product)"></fa-icon>
                   </td>

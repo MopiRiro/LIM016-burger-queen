@@ -24,7 +24,7 @@ export class LoginComponent implements OnInit {
   Login(){
     const {email,password} = this.user;
     this.authService.login(email,password).then(res =>{
-      console.log('Se logeo con exito Firebase', res);
+      //console.log('Se logeo con exito Firebase', res);
     });
     this.Role();
   }
@@ -43,10 +43,10 @@ export class LoginComponent implements OnInit {
       userLog.subscribe((res: any) => {
         const userEmail = res.email;
         const usersData = data.users;
-        console.log(userEmail);
+        //console.log(userEmail);
         const find = usersData.filter((x: any) => x.email == userEmail)
         const role = find[0].rol;
-        console.log(role);
+        //console.log(role);
         if(role === 'chef') {
           this.router.navigateByUrl("/chef");
         } else if (role === 'waiter') {

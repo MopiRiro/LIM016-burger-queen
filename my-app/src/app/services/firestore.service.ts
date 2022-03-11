@@ -7,7 +7,6 @@ import { AngularFirestore } from '@angular/fire/compat/firestore';
 export class FirestoreService {
 
   constructor(
-    private affirestore: AngularFirestore
+    private firestore: AngularFirestore
   ) { }
-  
 }
