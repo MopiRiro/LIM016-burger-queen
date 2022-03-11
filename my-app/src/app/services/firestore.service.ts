@@ -6,7 +6,9 @@ import { AngularFirestore } from '@angular/fire/compat/firestore';
 })
 export class FirestoreService {
 
-  constructor(
-    private firestore: AngularFirestore
-  ) { }
+  constructor(private firestore: AngularFirestore) { }
+
+  sendOrdeFireStore(order: any): Promise<any> {
+    return this.firestore.collection('orders').add(order);
+  }
 }

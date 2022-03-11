@@ -2,6 +2,7 @@ import { Component, OnInit } from '@angular/core';
 import { ShoppinngCarService } from 'src/app/services/shoppinng-car.service';
 import { faCoffee, faTrashAlt } from '@fortawesome/free-solid-svg-icons';
 import Swal from 'sweetalert2';
+import { FirestoreService } from 'src/app/services/firestore.service';
 
 
 @Component({
@@ -25,12 +26,13 @@ export class PlaceOrderComponent implements OnInit {
   igv:number = 0;
   total:number = 0;
 
-  constructor(private shoppingCarService: ShoppinngCarService) { }
+  constructor(private shoppingCarService: ShoppinngCarService, private firestore: FirestoreService) { }
 
   ngOnInit(): void {
-    this.shoppingCarService.disparadorShoppinngCar.subscribe(data => {console.log('Recibiendo data: ', data);
-    this.orderList.push({data, amount: 1});
-    this.totalPrice();
+    this.shoppingCarService.disparadorShoppinngCar.subscribe(data => {
+      //console.log('Recibiendo data: ', data);
+      this.orderList.push({data, amount: 1});
+      this.totalPrice();
   });
   }
 
@@ -61,7 +63,7 @@ export class PlaceOrderComponent implements OnInit {
       .reduce((acc,item) => acc += item);
       this.igv = this.subTotal*18/100;
       this.total = this.subTotal + this.igv;
-      console.log(this.subTotal);
+      //console.log(this.subTotal);
     }
   }
 
@@ -81,8 +83,20 @@ export class PlaceOrderComponent implements OnInit {
       icon: 'success',
       title: 'Registered Order'
     })
-    console.log(this.clientName);
-    console.log(this.base);
+
+    const orderObj = {
+      client: this.clientName,
+      table: this.tableNumber,
+      orders: this.orderList,
+      date: new Date
+    }
+
+    console.log(orderObj);
+    this.firestore.sendOrdeFireStore(orderObj).then(() => {console.log('Orden registrada con éxito!');
+  }).catch(err => {console.log(err)});
+
+    //console.log(this.clientName);
+    //console.log(this.base);
     this.clientName = "";
     this.tableNumber = "";
     this.orderList = [];
