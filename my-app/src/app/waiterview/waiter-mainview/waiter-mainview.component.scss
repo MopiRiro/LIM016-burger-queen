@@ -1,8 +1,11 @@
-.wrapper{
-    display: flex;
-    flex-direction: row;
+.wrapper {
+  display: flex;
+  flex-direction: row;
 }
-.containerMenu{
-    display: flex;
-    flex-direction: column;
+.containerMenu {
+  display: flex;
+  flex-direction: column;
+}
+app-product-list {
+  height: 70%;
 }

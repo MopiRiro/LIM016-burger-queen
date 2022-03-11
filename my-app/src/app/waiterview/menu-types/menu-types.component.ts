@@ -8,24 +8,23 @@ import { DataService } from '../../services/data.service';
   styleUrls: ['./menu-types.component.scss']
 })
 
-
-
 export class MenuTypesComponent implements OnInit {
 
   selectedOption: string = '';
-  printedOption: string = ''; 
+  printedOption: string = '';
+  personalType: boolean = false;
+  promotionsType: boolean = false;
 
   public options = [
     { name:'Open this select menu' , value:''}
   ]
 
-  
+
   print() {
     this.printedOption = this.selectedOption;
   }
 
-  constructor(
-    private dataService : DataService) { }
+  constructor(private dataService : DataService) { }
 
   ngOnInit(): void {
     this.dataService.getJSON().subscribe(data=>{
@@ -60,7 +59,8 @@ export class MenuTypesComponent implements OnInit {
     });
   }
 
-  
-  
+  filterType(){
+    console.log(this.selectedOption)
+  }
 
 }
