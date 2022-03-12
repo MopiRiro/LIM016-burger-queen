@@ -21,7 +21,7 @@
               </tr>
           </thead>
           <tbody>
-              <tr *ngFor="let product of orderList">
+              <tr *ngFor="let product of productList">
                   <th class="itemsCounterProduct">
                       <button class="btn btn-primary btn-sm btnCant" (click)="changeAmount(-base, product)">-</button>
                       <p class="col">{{product.amount}}</p>

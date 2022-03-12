@@ -1,9 +1,10 @@
+import { Product } from './../../model/order';
 import { Component, OnInit } from '@angular/core';
 import { ShoppinngCarService } from 'src/app/services/shoppinng-car.service';
 import { faCoffee, faTrashAlt } from '@fortawesome/free-solid-svg-icons';
 import Swal from 'sweetalert2';
 import { FirestoreService } from 'src/app/services/firestore.service';
-
+import { Order } from 'src/app/model/order';
 
 @Component({
   selector: 'app-place-order',
@@ -11,27 +12,30 @@ import { FirestoreService } from 'src/app/services/firestore.service';
   styleUrls: ['./place-order.component.scss']
 })
 export class PlaceOrderComponent implements OnInit {
-
+  //*Icons
   faCoffee = faCoffee;
   faTrash = faTrashAlt;
 
-  public orderList:Array<any> = []
-
+  //*Order
+  productList:Array<any> = []
   clientName:string = "";
   tableNumber:string = "";
   price:number = 0;
   base: number = 1;
+  nuevo:Array<Product> = [];
 
+  //*Payment
   subTotal:number = 0;
   igv:number = 0;
   total:number = 0;
+
 
   constructor(private shoppingCarService: ShoppinngCarService, private firestore: FirestoreService) { }
 
   ngOnInit(): void {
     this.shoppingCarService.disparadorShoppinngCar.subscribe(data => {
-      //console.log('Recibiendo data: ', data);
-      this.orderList.push({data, amount: 1});
+      this.productList.push({data, amount: 1});
+      console.log(this.productList)
       this.totalPrice();
   });
   }
@@ -46,24 +50,23 @@ export class PlaceOrderComponent implements OnInit {
   }
 
   deleteItem(item:any){
-    const index = this.orderList.indexOf(item);
+    const index = this.productList.indexOf(item);
     if(index > -1){
-      this.orderList.splice(index,1);
+      this.productList.splice(index,1);
       this.totalPrice();
     }
-    console.log(this.orderList);
-    //return this.orderList;
+    console.log(this.productList);
+    //return this.productList;
   }
 
   totalPrice() {
-    if(this.orderList.length === 0){
+    if(this.productList.length === 0){
       this.subTotal = 0;
     } else {
-      this.subTotal = this.orderList.map((item)=>item.data.data.precio*item.amount)
+      this.subTotal = this.productList.map((item)=>item.data.data.precio*item.amount)
       .reduce((acc,item) => acc += item);
       this.igv = this.subTotal*18/100;
       this.total = this.subTotal + this.igv;
-      //console.log(this.subTotal);
     }
   }
 
@@ -84,22 +87,19 @@ export class PlaceOrderComponent implements OnInit {
       title: 'Registered Order'
     })
 
-    const orderObj = {
-      client: this.clientName,
-      table: this.tableNumber,
-      orders: this.orderList,
-      date: new Date
-    }
+    this.productList.forEach((product) => {
+      this.nuevo.push(new Product(product.amount, ""));
+    })
+
+    const orderObj =  new Order(this.clientName, parseInt(this.tableNumber), this.nuevo)
 
     console.log(orderObj);
     this.firestore.sendOrdeFireStore(orderObj).then(() => {console.log('Orden registrada con éxito!');
   }).catch(err => {console.log(err)});
 
-    //console.log(this.clientName);
-    //console.log(this.base);
     this.clientName = "";
     this.tableNumber = "";
-    this.orderList = [];
+    this.productList = [];
     this.subTotal = 0;
     this.igv = 0;
     this.total = 0;
@@ -109,7 +109,7 @@ export class PlaceOrderComponent implements OnInit {
     let clean  = () => {
       this.clientName = "";
       this.tableNumber = "";
-      this.orderList = [];
+      this.productList = [];
       this.base = 0;
       this.subTotal = 0;
       this.igv = 0;
