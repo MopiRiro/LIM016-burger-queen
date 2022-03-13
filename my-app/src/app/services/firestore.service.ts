@@ -11,6 +11,6 @@ export class FirestoreService {
 
   sendOrdeFireStore(order: Order): Promise<DocumentReference<any>> {
     return this.firestore.collection('orders').add(
-      {clientName: order.clientName, table: order.table, products: JSON.parse(JSON.stringify(order.products))});
+      {clientName: order.clientName, table: order.table, products: JSON.parse(JSON.stringify(order.products)), date: JSON.parse(JSON.stringify(order.date))});
   }
 }

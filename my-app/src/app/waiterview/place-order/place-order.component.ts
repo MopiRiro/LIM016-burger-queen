@@ -1,4 +1,4 @@
-import { Product } from './../../model/order';
+import { OrderDate, Product } from './../../model/order';
 import { Component, OnInit } from '@angular/core';
 import { ShoppinngCarService } from 'src/app/services/shoppinng-car.service';
 import { faCoffee, faTrashAlt } from '@fortawesome/free-solid-svg-icons';
@@ -23,6 +23,7 @@ export class PlaceOrderComponent implements OnInit {
   price:number = 0;
   base: number = 1;
   nuevo:Array<Product> = [];
+  orderDate:Array<OrderDate> = [];
 
   //*Payment
   subTotal:number = 0;
@@ -88,10 +89,13 @@ export class PlaceOrderComponent implements OnInit {
     })
 
     this.productList.forEach((product) => {
-      this.nuevo.push(new Product(product.amount, ""));
+      this.nuevo.push(new Product(product.amount, product.data.data.description));
     })
 
-    const orderObj =  new Order(this.clientName, parseInt(this.tableNumber), this.nuevo)
+    //*Capturamos la fecha y hora
+    this.orderDate.push(new OrderDate("12/03/2022", "12:55"));
+
+    const orderObj =  new Order(this.clientName, parseInt(this.tableNumber), this.nuevo, this.orderDate);
 
     console.log(orderObj);
     this.firestore.sendOrdeFireStore(orderObj).then(() => {console.log('Orden registrada con éxito!');
