@@ -13,4 +13,9 @@ export class FirestoreService {
     return this.firestore.collection('orders').add(
       {clientName: order.clientName, table: order.table, products: JSON.parse(JSON.stringify(order.products)), date: JSON.parse(JSON.stringify(order.date))});
   }
+
+  getOrder() {
+      return this.firestore.collection('orders').snapshotChanges();
+    }
 }
+
