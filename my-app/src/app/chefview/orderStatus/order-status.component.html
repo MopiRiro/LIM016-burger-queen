@@ -1,18 +1,18 @@
 <div class="order-container">
 
-  <div class="order card fontBaloo">
+  <div class="order card fontBaloo" *ngFor="let item of orders">
     <div class="info">
       <div class="client-name">
-        <p>Client: Valentina</p>
+        <p >Client: {{item.data.clientName}}</p>
       </div>
       <div class="client-table">
-        <p>Table: 5</p>
+        <p>Table: {{item.data.table}}</p>
       </div>
     </div>
-    <div class="time">
+    <div class="time" *ngFor = "let order of item.data.date">
       <ul>
-        <li>22/02/2022</li>
-        <li>21:32</li>
+        <li>{{order.monthDateYear}}</li>
+        <li>{{order.hourMinutes}}</li>
       </ul>
       <ul>
         <li>Tiempo: 00:45:00</li>
@@ -31,24 +31,14 @@
           <tr>
             <th>Cant</th>
             <th>Detalle</th>
-            <th>Adicional</th>
+            <!-- <th>Adicional</th> -->
           </tr>
         </thead>
-        <tbody>
+        <tbody *ngFor = "let order of item.data.products">
           <tr>
-            <th>1</th>
-            <td>Producto1</td>
-            <td>--</td>
-          </tr>
-          <tr>
-            <th>2</th>
-            <td>Producto2</td>
-            <td>Adicional1</td>
-          </tr>
-          <tr>
-            <th>1</th>
-            <td>Producto3</td>
-            <td>--</td>
+            <th>{{order.amount}}</th>
+            <td>{{order.description}}</td>
+            <!-- <td>{{item.data.products.amount}}</td> -->
           </tr>
         </tbody>
       </table>
@@ -56,119 +46,4 @@
       <h6 class="card-subtitle text-muted">Sin notas</h6>
     </div>
   </div>
-
-  <div class="order card fontBaloo">
-    <div class="info">
-      <div class="client-name">
-        <p>Client: Valentina</p>
-      </div>
-      <div class="client-table">
-        <p>Table: 5</p>
-      </div>
-    </div>
-    <div class="time">
-      <ul>
-        <li>22/02/2022</li>
-        <li>21:32</li>
-      </ul>
-      <ul>
-        <li>Tiempo: 00:45:00</li>
-      </ul>
-      <p class="tiempo"></p>
-    </div>
-    <div class="card-body">
-      <select class="form-select form-select-sm" *ngIf="roleChef">
-        <option selected>Nuevo</option>
-        <option value="1">Aceptado/Pendiente</option>
-        <option value="2">Listo</option>
-      </select>
-      <p *ngIf="roleWaiter">Order Status</p>
-      <table class="table table-striped table-sm">
-        <thead>
-          <tr>
-            <th>Cant</th>
-            <th>Detalle</th>
-            <th>Adicional</th>
-          </tr>
-        </thead>
-        <tbody>
-          <tr>
-            <th>1</th>
-            <td>Producto1</td>
-            <td>--</td>
-          </tr>
-          <tr>
-            <th>2</th>
-            <td>Producto2</td>
-            <td>Adicional1</td>
-          </tr>
-          <tr>
-            <th>1</th>
-            <td>Producto3</td>
-            <td>--</td>
-          </tr>
-        </tbody>
-      </table>
-      <h6 class="card-title">Notas</h6>
-      <h6 class="card-subtitle text-muted">Sin notas</h6>
-    </div>
-  </div>
-
-  <div class="order card fontBaloo">
-    <div class="info">
-      <div class="client-name">
-        <p>Client: Valentina</p>
-      </div>
-      <div class="client-table">
-        <p>Table: 5</p>
-      </div>
-    </div>
-    <div class="time">
-      <ul>
-        <li>22/02/2022</li>
-        <li>21:32</li>
-      </ul>
-      <ul>
-        <li>Tiempo: 00:45:00</li>
-      </ul>
-      <p class="tiempo"></p>
-    </div>
-    <div class="card-body">
-      <select class="form-select form-select-sm" *ngIf="roleChef">
-        <option selected>Nuevo</option>
-        <option value="1">Aceptado/Pendiente</option>
-        <option value="2">Listo</option>
-      </select>
-      <p *ngIf="roleWaiter">Order Status</p>
-      <table class="table table-striped table-sm">
-        <thead>
-          <tr>
-            <th>Cant</th>
-            <th>Detalle</th>
-            <th>Adicional</th>
-          </tr>
-        </thead>
-        <tbody>
-          <tr>
-            <th>1</th>
-            <td>Producto1</td>
-            <td>--</td>
-          </tr>
-          <tr>
-            <th>2</th>
-            <td>Producto2</td>
-            <td>Adicional1</td>
-          </tr>
-          <tr>
-            <th>1</th>
-            <td>Producto3</td>
-            <td>--</td>
-          </tr>
-        </tbody>
-      </table>
-      <h6 class="card-title">Notas</h6>
-      <h6 class="card-subtitle text-muted">Sin notas</h6>
-    </div>
-  </div>
-
 </div>
