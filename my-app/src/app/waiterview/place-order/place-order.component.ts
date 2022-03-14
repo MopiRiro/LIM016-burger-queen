@@ -92,8 +92,13 @@ export class PlaceOrderComponent implements OnInit {
       this.nuevo.push(new Product(product.amount, product.data.data.description));
     })
 
+    //fechaCreacion: new Date
+    //fechaTerminada: new Date
+    let dateDay = new Date().toLocaleDateString();
+    let hourDay = `${new Date().getHours()}`+":"+`${new Date().getMinutes()}`;
+
     //*Capturamos la fecha y hora
-    this.orderDate.push(new OrderDate("12/03/2022", "12:55"));
+    this.orderDate.push(new OrderDate(dateDay, hourDay));
 
     const orderObj =  new Order(this.clientName, parseInt(this.tableNumber), this.nuevo, this.orderDate);
 
@@ -144,5 +149,3 @@ export class PlaceOrderComponent implements OnInit {
 
   }
 }
-//fechaCreacion: new Date
-//fechaTerminada: new Date
