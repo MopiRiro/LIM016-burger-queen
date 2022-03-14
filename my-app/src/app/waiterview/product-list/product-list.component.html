@@ -1,7 +1,21 @@
 <div class="card containerProductList fontBaloo">
+    <div class="containerChilldProductList">
+        <div class="card containerSelectOption">
+            <div class="card-body containerMenuTypes">
+                <div class="itemTittleContainer" >
+                <p>Select the menu</p>
+                </div>
+                <select (change)="filteredMenu($event)" [(ngModel)]="selectedOption" class="form-select" aria-label="Default select example">
+                    <option *ngFor="let o of options">
+                        {{o.name}}
+                    </option>
+                </select>
+            </div>
+        </div>
 
-    <div class="col-md-12 justify-content-between  d-flex flex-wrap mx-auto">
-        <app-card-product [data]="product" *ngFor="let product of productos " class="m-sm-3 mx-auto"></app-card-product>
+
+        <div class="col-md-12 justify-content-between  d-flex flex-wrap mx-auto">
+            <app-card-product [data]="product" *ngFor="let product of productos " class="m-sm-3 mx-auto"></app-card-product>
+        </div>
     </div>
-
 </div>

@@ -12,8 +12,6 @@ export class MenuTypesComponent implements OnInit {
 
   selectedOption: string = '';
   printedOption: string = '';
-  personalType: boolean = false;
-  promotionsType: boolean = false;
 
   public options = [
     { name:'Open this select menu' , value:''}
