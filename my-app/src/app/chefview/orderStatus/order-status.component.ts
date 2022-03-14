@@ -16,7 +16,7 @@ export class OrderStatusComponent implements OnInit {
 
   orders: Array<any> = [];
 
-  constructor(private dataService: DataService, private getOrderStatusService: GetOrderStatusService) { }
+  constructor( private dataService: DataService, private getOrderStatusService: GetOrderStatusService) { }
 
   ngOnInit(): void {
     this.dataUser = this.dataService.disparador.getValue();
