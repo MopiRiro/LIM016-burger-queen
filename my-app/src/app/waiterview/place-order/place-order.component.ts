@@ -4,6 +4,7 @@ import { ShoppinngCarService } from 'src/app/services/shoppinng-car.service';
 import { faCoffee, faTrashAlt } from '@fortawesome/free-solid-svg-icons';
 import Swal from 'sweetalert2';
 import { FirestoreService } from 'src/app/services/firestore.service';
+import {GetOrderStatusService} from 'src/app/services/get-order-status.service';
 import { Order } from 'src/app/model/order';
 
 @Component({
@@ -31,7 +32,7 @@ export class PlaceOrderComponent implements OnInit {
   total:number = 0;
 
 
-  constructor(private shoppingCarService: ShoppinngCarService, private firestore: FirestoreService) { }
+  constructor(private shoppingCarService: ShoppinngCarService, private firestore: FirestoreService, private getOrderStatusService: GetOrderStatusService) { }
 
   ngOnInit(): void {
     this.shoppingCarService.disparadorShoppinngCar.subscribe(data => {
@@ -92,13 +93,21 @@ export class PlaceOrderComponent implements OnInit {
       this.nuevo.push(new Product(product.amount, product.data.data.description));
     })
 
+    //fechaCreacion: new Date
+    //fechaTerminada: new Date
+    let dateDay = new Date().toLocaleDateString();
+    let hourDay = `${new Date().getHours()}`+":"+`${new Date().getMinutes()}`;
+
     //*Capturamos la fecha y hora
-    this.orderDate.push(new OrderDate("12/03/2022", "12:55"));
+    this.orderDate.push(new OrderDate(dateDay, hourDay));
 
     const orderObj =  new Order(this.clientName, parseInt(this.tableNumber), this.nuevo, this.orderDate);
 
     console.log(orderObj);
     this.firestore.sendOrdeFireStore(orderObj).then(() => {console.log('Orden registrada con éxito!');
+    //?Mandando con disparador get-otder-status
+    this.getOrderStatusService.disparadorGetOrderStatus.emit({orderSaved: orderObj});
+    //Mandar al servicio con un "servicio"
   }).catch(err => {console.log(err)});
 
     this.clientName = "";
@@ -144,5 +153,3 @@ export class PlaceOrderComponent implements OnInit {
 
   }
 }
-//fechaCreacion: new Date
-//fechaTerminada: new Date

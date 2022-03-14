@@ -6,28 +6,27 @@
   // max-height: 100%;
 }
 
-.containerChilldProductList{
+.containerChilldProductList {
   display: flex;
   flex-direction: column;
 }
 
-
-.containerMenuTypes{
+.containerMenuTypes {
   display: flex;
   flex-direction: row;
   justify-content: space-evenly;
 }
-.itemTittleContainer{
+.itemTittleContainer {
   align-items: center;
 }
 
-.itemTittleContainer p{
+.itemTittleContainer p {
   margin-top: 0;
   margin-bottom: 0rem;
   padding-top: 0.5rem;
 }
 
-.containerSelectOption{
+.containerSelectOption {
   margin: 1rem;
   padding: 0 1rem;
 }
