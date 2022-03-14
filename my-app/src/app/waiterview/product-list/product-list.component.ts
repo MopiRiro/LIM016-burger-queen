@@ -63,7 +63,16 @@ export class ProductListComponent implements OnInit {
     console.log($event.target.value);
     this.dataService.getJSON().subscribe(data=>{
       const {productos} = data;
-      this.listproducts = productos.filter((item:any) => item.menu == $event.target.value);
+      if($event.target.value =='Open this select menu'){
+        this.listproducts = productos;
+        console.log(this.listproducts);
+      }else {
+        const typeProducts = productos.filter((item:any) => item.menu == $event.target.value);
+        const aditProducts = productos.filter((item:any) => item.tipo == 'adicional');
+        const pruebaConcat = typeProducts.concat(aditProducts);
+        this.listproducts = pruebaConcat;
+        console.log(this.listproducts);
+      }
     });    
   }
 

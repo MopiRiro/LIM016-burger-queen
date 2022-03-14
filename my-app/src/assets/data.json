@@ -46,7 +46,7 @@
                 },
                 {
                     "id":"p06",
-                    "description":"makis lomo salado",
+                    "description":"makis lomo saltado",
                     "precio" : "23",
                     "img":"http://compras.cuponidad.pe/images/Deals/6875pizza3.jpg",
                     "tipo":"principal",
@@ -128,6 +128,14 @@
                     "description":"Salsa acevichada",
                     "precio" : "4",
                     "img":"https://assets.niusushi.cl/production/images/786f3c69-e6c7-48aa-b92e-b37a9a4e97af/medium/SALSA_ACEVICHADA_BLANCA_2.jpg?1481926264",
+                    "tipo":"adicional",
+                    "menu":["Promociones","Personal"]
+                },
+                {
+                    "id":"p16",
+                    "description":"Salsa teriyaki",
+                    "precio" : "4",
+                    "img":"https://cdn2.cocinadelirante.com/sites/default/files/styles/gallerie/public/salsa-teriyaki-casera-dulce.jpg",
                     "tipo":"adicional",
                     "menu":["Promociones","Personal"]
                 }
