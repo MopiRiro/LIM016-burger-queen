@@ -1,3 +1,6 @@
+.card {
+  width: 18rem;
+}
 .btn {
   background-color: var(--GreenStrong);
   color: var(--White);
@@ -14,4 +17,12 @@
 .card-img-top {
   height: 10rem;
   object-fit: cover;
+}
+
+@media (min-width: 1024px) {
+  .card {
+    width: 13rem;
+    /* height: 6rem;
+    object-fit: cover; */
+  }
 }
