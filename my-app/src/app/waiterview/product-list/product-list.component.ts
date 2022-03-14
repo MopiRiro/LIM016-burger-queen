@@ -9,7 +9,7 @@ import { DataService } from '../../services/data.service';
 })
 
 export class ProductListComponent implements OnInit {
-  public productos: any[] = [];
+  public listproducts: any[] = [];
   menu:any[] = [];
   selectedOption: string = '';
   printedOption: string = '';
@@ -54,7 +54,7 @@ export class ProductListComponent implements OnInit {
   getAllProducts(){
     this.dataService.getJSON().subscribe(data=>{
       const {productos} = data;
-      this.productos = productos;
+      this.listproducts = productos;
     });
   }
 
@@ -63,7 +63,7 @@ export class ProductListComponent implements OnInit {
     console.log($event.target.value);
     this.dataService.getJSON().subscribe(data=>{
       const {productos} = data;
-      this.productos = productos.filter((item:any) => item.productos.menu == $event.target.value);
+      this.listproducts = productos.filter((item:any) => item.menu == $event.target.value);
     });    
   }
 
