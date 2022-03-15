@@ -123,7 +123,7 @@ export class PlaceOrderComponent implements OnInit {
       this.clientName = "";
       this.tableNumber = "";
       this.productList = [];
-      this.base = 0;
+      this.base = 1;
       this.subTotal = 0;
       this.igv = 0;
       this. total = 0
