@@ -1,49 +1,5 @@
 <div class="order-container">
-
-  <div class="order card fontBaloo" *ngFor="let item of orders" id="{{item.id}}">
-    <div class="info">
-      <div class="client-name">
-        <p >Client: {{item.data.clientName}}</p>
-      </div>
-      <div class="client-table">
-        <p>Table: {{item.data.table}}</p>
-      </div>
-    </div>
-    <div class="time" *ngFor = "let order of item.data.date">
-      <ul>
-        <li>{{order.monthDateYear}}</li>
-        <li>{{order.hourMinutes}}</li>
-      </ul>
-      <ul>
-        <li>Tiempo: {{time}}</li>
-      </ul>
-      <p class="tiempo"></p>
-    </div>
-    <div class="card-body">
-      <select class="form-select form-select-sm" *ngIf="roleChef" (change)="orderStatus($event)" >
-        <option value="new" selected>Nuevo</option>
-        <option value="acepted">Aceptado</option>
-        <option value="ready">Listo</option>
-      </select>
-      <p *ngIf="roleWaiter">Order Status</p>
-      <table class="table table-striped table-sm">
-        <thead>
-          <tr>
-            <th>Cant</th>
-            <th>Detalle</th>
-            <!-- <th>Adicional</th> -->
-          </tr>
-        </thead>
-        <tbody *ngFor = "let order of item.data.products">
-          <tr>
-            <th>{{order.amount}}</th>
-            <td>{{order.description}}</td>
-            <!-- <td>{{item.data.products.amount}}</td> -->
-          </tr>
-        </tbody>
-      </table>
-      <h6 class="card-title">Notas</h6>
-      <h6 class="card-subtitle text-muted">Sin notas</h6>
-    </div>
+  <div class="col-md-12 justify-content-between  d-flex flex-wrap mx-auto">
+    <app-card-order [orders]="order" *ngFor="let order of listOrders" class="m-sm-3 mx-auto"></app-card-order>
   </div>
 </div>
