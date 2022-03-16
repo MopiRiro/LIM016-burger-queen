@@ -9,7 +9,7 @@ import { FirestoreService } from '../../services/firestore.service';
   styleUrls: ['./order-status.component.scss']
 })
 export class OrderStatusComponent implements OnInit {
-
+  public listOrders: any[] = [];
   public dataUser: any;
   roleChef: boolean = false;
   roleWaiter: boolean = false;
@@ -38,55 +38,17 @@ export class OrderStatusComponent implements OnInit {
 
   getOrder(){
     this.firestoreService.getOrder().subscribe(data => {
-      this.orders = [];
+      // this.orders = [];
       data.forEach((item) => {
-        this.orders.push({
+        this.listOrders.push({
           id: item.payload.doc.id,
           data: item.payload.doc.data()
         });
       });
-      console.log(this.orders)
+      console.log(this.listOrders)
     })
   }
 
-  orderStatus($event:any){
-    console.log($event.target.value);
-    if($event.target.value == 'acepted'){
-      this.start()
-    } else if ($event.target.value == 'ready'){
-      console.log('se pausa el cronómetro');
-      this.pause()
-      //? Guardar date en documento de la colección
-    } else {
-      console.log('reinicia el cronómetro');
-      this.time = "00:00:00"
-    }
-  }
-
-  start(){
-    const btn = document.querySelectorAll('select');
-    console.log(btn)
-    this.id = ""
-    let startTime = Date.now();
-    console.log(startTime);
-    this.timeInterval = setInterval(() => {
-      this.runningTime = Date.now() - startTime;
-      this.time = this.calculateTime(this.runningTime);
-    }, 1000)
-  }
-
-  calculateTime(x:any){
-    const totalSeconds = Math.floor(x / 1000);
-    const totalMinutes = Math.floor(totalSeconds / 60);
-
-    const displaySeconds = (totalSeconds % 60).toString().padStart(2, "0");
-    const displayMinutes = totalMinutes.toString().padStart(2, "0")
-
-    return `${displayMinutes}:${displaySeconds}`
-  }
-
-  pause(){
-    clearInterval(this.timeInterval)
-  }
+  
 
 }
