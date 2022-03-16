@@ -45,7 +45,28 @@ export class OrderStatusComponent implements OnInit {
           data: item.payload.doc.data()
         });
       });
-      console.log(this.listOrders)
+      
+
+      
+      // const arr = this.listOrders.data.
+    //  this.listOrders.sort((a:any,b:any) => +new Date(a.data.date.monthDateYear) - +new Date(b.data.date.monthDateYear));
+
+
+    // const arraySort:string[] = ["09/06/2015", "25/06/2015", "22/06/2015", "25/07/2015", "18/05/2015"];
+    // const sorted = arraySort.sort((a, b) => {
+    //   const newA = a.split('/').reverse().join('-');
+    //   const newB = b.split('/').reverse().join('-');
+    //   return +new Date(newA) - +new Date(newB)
+    // })
+    // console.log(sorted)
+      
+    this.listOrders.forEach((e:any) => {
+      e.data.date.forEach((item:any)=>{
+      console.log(item.monthDateYear);
+      })
+    });
+
+    console.log(this.listOrders);
     })
   }
 
