@@ -44,18 +44,18 @@ export class OrderStatusComponent implements OnInit {
           data: item.payload.doc.data()
         });
       });
-    
+
     this.listOrders.sort((a:any,b:any) =>{
       console.log(a.data.date[0].monthDateYear);
       const newA = a.data.date[0].monthDateYear.split('/').reverse().join('-')
       const newB = b.data.date[0].monthDateYear.split('/').reverse().join('-');
+      if(newA == newB){
+        return a.data.date[0].hourMinutes.localeCompare(b.data.date[0].hourMinutes)
+      }
       return +new Date(newA) - +new Date(newB)
     })
 
-    
     })
   }
-
-  
 
 }
