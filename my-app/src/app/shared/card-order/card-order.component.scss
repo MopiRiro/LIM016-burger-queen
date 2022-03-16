@@ -64,3 +64,20 @@
       }
     }
   }
+
+  .containerDelivered{
+    display: flex;
+    justify-content: center;
+  .btnDelivered {
+      background-color: var(--GreenLight);
+      border: none;
+      padding: 0.4rem;
+      color: var(--White);
+      border-radius:0.5rem;
+      margin: 0.3rem;
+    }
+    
+  }
+
+  
+ 
