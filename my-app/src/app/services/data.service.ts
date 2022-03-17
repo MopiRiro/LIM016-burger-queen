@@ -9,14 +9,10 @@ export class DataService {
   @Output() disparador:BehaviorSubject<any> = new BehaviorSubject({});
 
   constructor(private http: HttpClient) {
-    this.getJSON().subscribe(data => {
-    });
 }
 
-public getJSON(): Observable<any> {
-  return this.http.get("../assets/data.json");
-}
-
-
+  public getJSON(): Observable<any> {
+    return this.http.get("../assets/data.json");
+  }
 
 }

@@ -19,6 +19,7 @@ export class AuthService {
     }
 
     getUserLogged(){
+      console.log(this.afauth.authState);
       return this.afauth.authState;
     }
 
@@ -26,5 +27,4 @@ export class AuthService {
       this.afauth.signOut();
     }
 
-    
 }
