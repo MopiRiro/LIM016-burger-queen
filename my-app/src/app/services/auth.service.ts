@@ -25,4 +25,6 @@ export class AuthService {
     logOut(){
       this.afauth.signOut();
     }
+
+    
 }

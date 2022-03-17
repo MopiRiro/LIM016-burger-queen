@@ -46,6 +46,7 @@ export class OrderStatusComponent implements OnInit {
       });
 
     this.listOrders.sort((a:any,b:any) =>{
+      // console.log(a.data.date[0].monthDateYear);
       const newA = a.data.date[0].monthDateYear.split('/').reverse().join('-')
       const newB = b.data.date[0].monthDateYear.split('/').reverse().join('-');
       if(newA == newB){
@@ -54,8 +55,8 @@ export class OrderStatusComponent implements OnInit {
         return +new Date(newB) - +new Date(newA)
       }
     })
-
     })
+    // console.log(this.listOrders);
   }
 
 }
