@@ -99,7 +99,7 @@ export class PlaceOrderComponent implements OnInit {
     let hourDay = `${new Date().getHours()}`+":"+`${new Date().getMinutes()}`;
 
     //*Capturamos la fecha y hora
-    this.orderDate.push(new OrderDate(dateDay, hourDay));
+    this.orderDate.push(new OrderDate(dateDay, hourDay.toString().padStart(2, "0")));
 
     const orderObj =  new Order(this.clientName, parseInt(this.tableNumber), "Nuevo", "00:00", this.nuevo, this.orderDate);
 
