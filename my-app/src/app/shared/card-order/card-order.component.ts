@@ -29,8 +29,6 @@ export class CardOrderComponent implements OnInit {
     this.roleChef = this.dataUser.rol == 'chef' ? true : false;
     console.log(this.orders.data.startTime);
     console.log(this.orders.data.status);
-    
-
   }
 
   orderStatus($event:any){
