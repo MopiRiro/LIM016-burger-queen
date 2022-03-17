@@ -51,9 +51,8 @@ export class OrderStatusComponent implements OnInit {
       const newB = b.data.date[0].monthDateYear.split('/').reverse().join('-');
       return +new Date(newA) - +new Date(newB)
     })
-
-    
     })
+    console.log(this.listOrders);
   }
 
   
