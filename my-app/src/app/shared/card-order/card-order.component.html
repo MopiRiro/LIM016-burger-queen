@@ -24,7 +24,7 @@
         <option value="acepted">Aceptado</option>
         <option value="ready">Listo</option>
       </select>
-      <p *ngIf="roleWaiter">{{orderStatusChange}}</p>
+      <p *ngIf="roleWaiter">{{orders.data.status}}</p>
       <table class="table table-striped table-sm">
         <thead>
           <tr>
@@ -44,6 +44,6 @@
       <div class="containerDelivered">
         <button class="btnDelivered">Delivered</button>
       </div>
-      
+
     </div>
   </div>

@@ -13,9 +13,10 @@ export class CardOrderComponent implements OnInit {
   roleChef: boolean = false;
   roleWaiter: boolean = false;
 
-  time:any= "00:00:00";
+  time:any= "00:00";
   runningTime:any = 0;
   timeInterval:any;
+  startTime:any;
 
   orderStatusChange:string = "Nuevo";
 
@@ -30,9 +31,13 @@ export class CardOrderComponent implements OnInit {
 
   orderStatus($event:any){
     console.log($event.target.value);
+    //? if startTime = 0 Date.now()
+    //? else startTime jalar el campo del documento
     if($event.target.value == 'acepted'){
       this.start()
+      this.startTime = Date.now();
       this.orderStatusChange = "Acepted"
+      //* Guardar startTime en FS
     } else if ($event.target.value == 'ready'){
       console.log('se pausa el cronómetro');
       this.pause()
@@ -40,17 +45,16 @@ export class CardOrderComponent implements OnInit {
       //? Guardar date en documento de la colección
     } else {
       console.log('reinicia el cronómetro');
-      this.time = "00:00:00"
+      this.time = "00:00"
     }
   }
 
   start(){
     const btn = document.querySelectorAll('select');
     console.log(btn)
-    let startTime = Date.now();
-    console.log(startTime);
+    console.log(this.startTime);
     this.timeInterval = setInterval(() => {
-      this.runningTime = Date.now() - startTime;
+      this.runningTime = Date.now() - this.startTime;
       this.time = this.calculateTime(this.runningTime);
     }, 1000)
   }

@@ -101,7 +101,7 @@ export class PlaceOrderComponent implements OnInit {
     //*Capturamos la fecha y hora
     this.orderDate.push(new OrderDate(dateDay, hourDay));
 
-    const orderObj =  new Order(this.clientName, parseInt(this.tableNumber), this.nuevo, this.orderDate);
+    const orderObj =  new Order(this.clientName, parseInt(this.tableNumber), "Nuevo", "00:00", this.nuevo, this.orderDate);
 
     console.log(orderObj);
     this.firestore.sendOrdeFireStore(orderObj).then(() => {console.log('Orden registrada con éxito!');
