@@ -50,9 +50,10 @@ export class OrderStatusComponent implements OnInit {
       const newA = a.data.date[0].monthDateYear.split('/').reverse().join('-')
       const newB = b.data.date[0].monthDateYear.split('/').reverse().join('-');
       if(newA == newB){
-        return a.data.date[0].hourMinutes.localeCompare(b.data.date[0].hourMinutes)
+        return b.data.date[0].hourMinutes.localeCompare(a.data.date[0].hourMinutes);
+      } else {
+        return +new Date(newB) - +new Date(newA)
       }
-      return +new Date(newA) - +new Date(newB)
     })
 
     })
