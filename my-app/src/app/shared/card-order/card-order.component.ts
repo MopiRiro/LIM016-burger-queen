@@ -17,6 +17,8 @@ export class CardOrderComponent implements OnInit {
   runningTime:any = 0;
   timeInterval:any;
 
+  orderStatusChange:string = "Nuevo";
+
   constructor(private dataService: DataService) { }
 
   ngOnInit(): void {
@@ -30,9 +32,11 @@ export class CardOrderComponent implements OnInit {
     console.log($event.target.value);
     if($event.target.value == 'acepted'){
       this.start()
+      this.orderStatusChange = "Acepted"
     } else if ($event.target.value == 'ready'){
       console.log('se pausa el cronómetro');
       this.pause()
+      this.orderStatusChange = "Ready to delivere."
       //? Guardar date en documento de la colección
     } else {
       console.log('reinicia el cronómetro');
