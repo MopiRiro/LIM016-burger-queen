@@ -33,18 +33,16 @@ export class CardOrderComponent implements OnInit {
 
   orderStatus($event:any){
     console.log($event.target.value);
-    //? if startTime = 0 Date.now()
-    //? else startTime jalar el campo del documento
     if($event.target.value == 'Acepted'){
       this.start()
       this.startTime = Date.now();
       this.firestoreService.updateStatus(this.orders.id,$event.target.value);
-      
+
       //* Guardar startTime en FS
     } else if ($event.target.value == 'Ready'){
       // console.log('se pausa el cronómetro');
       this.pause()
-    
+
       //? Guardar date en documento de la colección
     } else {
       // console.log('reinicia el cronómetro');
