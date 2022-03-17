@@ -8,28 +8,28 @@
         <p>Table: {{orders.data.table}}</p>
       </div>
     </div>
-    <div class="time" *ngFor = "let order of orders.data.date">
-      <ul>
+    <div class="time">
+      <ul *ngFor = "let order of orders.data.date">
         <li>{{order.monthDateYear}}</li>
         <li>{{order.hourMinutes}}</li>
       </ul>
       <ul>
-        <li>Tiempo: {{time}}</li>
+        <li>Time: {{time}}</li>
       </ul>
       <p class="tiempo"></p>
     </div>
     <div class="card-body">
       <select class="form-select form-select-sm" *ngIf="roleChef" (change)="orderStatus($event)" >
-        <option value="new" selected>Nuevo</option>
-        <option value="acepted">Aceptado</option>
-        <option value="ready">Listo</option>
+        <option value="New" selected>New</option>
+        <option value="Acepted">Acepted</option>
+        <option value="Ready">Ready</option>
       </select>
       <p *ngIf="roleWaiter">{{orders.data.status}}</p>
       <table class="table table-striped table-sm">
         <thead>
           <tr>
             <th>Cant</th>
-            <th>Detalle</th>
+            <th>Detail</th>
             <!-- <th>Adicional</th> -->
           </tr>
         </thead>

@@ -5,18 +5,6 @@
 2. Importar el Star Time
 
 3. Condicional 
-if(starTime === 00:00){
-    starTime = Date.now ();
-    orderStatus = 'Nuevo'
-
-}else {
-    starTime // starTime de Firebase
-    orderStatus = "Aceptado"
-}
-
-
------------------------
-
 if(orderStatus = 'Nuevo'){
     starTime === 00:00
 

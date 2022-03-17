@@ -1,5 +1,7 @@
 import { Component, OnInit, Input } from '@angular/core';
-import { DataService } from '../../services/data.service'
+import { DataService } from '../../services/data.service';
+import { FirestoreService } from '../../services/firestore.service';
+
 
 @Component({
   selector: 'app-card-order',
@@ -18,41 +20,44 @@ export class CardOrderComponent implements OnInit {
   timeInterval:any;
   startTime:any;
 
-  orderStatusChange:string = "Nuevo";
-
-  constructor(private dataService: DataService) { }
+  constructor(private dataService: DataService, private firestoreService: FirestoreService) { }
 
   ngOnInit(): void {
     this.dataUser = this.dataService.disparador.getValue();
     // console.log("este es el usuario en order-place: ", this.dataUser);
     this.roleWaiter = this.dataUser.rol == 'waiter' ? true : false;
     this.roleChef = this.dataUser.rol == 'chef' ? true : false;
+    console.log(this.orders.data.startTime);
+    console.log(this.orders.data.status);
+    
+
   }
 
   orderStatus($event:any){
     console.log($event.target.value);
     //? if startTime = 0 Date.now()
     //? else startTime jalar el campo del documento
-    if($event.target.value == 'acepted'){
+    if($event.target.value == 'Acepted'){
       this.start()
       this.startTime = Date.now();
-      this.orderStatusChange = "Acepted"
+      this.firestoreService.updateStatus(this.orders.id,$event.target.value);
+      
       //* Guardar startTime en FS
-    } else if ($event.target.value == 'ready'){
-      console.log('se pausa el cronómetro');
+    } else if ($event.target.value == 'Ready'){
+      // console.log('se pausa el cronómetro');
       this.pause()
-      this.orderStatusChange = "Ready to delivere."
+    
       //? Guardar date en documento de la colección
     } else {
-      console.log('reinicia el cronómetro');
+      // console.log('reinicia el cronómetro');
       this.time = "00:00"
     }
   }
 
   start(){
     const btn = document.querySelectorAll('select');
-    console.log(btn)
-    console.log(this.startTime);
+    // console.log(btn)
+    // console.log(this.startTime);
     this.timeInterval = setInterval(() => {
       this.runningTime = Date.now() - this.startTime;
       this.time = this.calculateTime(this.runningTime);
@@ -72,5 +77,7 @@ export class CardOrderComponent implements OnInit {
   pause(){
     clearInterval(this.timeInterval)
   }
+
+
 
 }

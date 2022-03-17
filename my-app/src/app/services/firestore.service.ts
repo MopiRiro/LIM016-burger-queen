@@ -17,5 +17,11 @@ export class FirestoreService {
   getOrder() {
       return this.firestore.collection('orders').snapshotChanges();
     }
+
+  updateStatus(id:string, status:string) {
+    return this.firestore.collection('orders').doc(id).update({
+      status:status
+    })
+  }
 }
 
