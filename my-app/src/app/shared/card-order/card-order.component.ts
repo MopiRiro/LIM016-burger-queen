@@ -1,3 +1,4 @@
+import { Router } from '@angular/router';
 import { Component, OnInit, Input } from '@angular/core';
 import { DataService } from '../../services/data.service';
 import { FirestoreService } from '../../services/firestore.service';
@@ -20,7 +21,9 @@ export class CardOrderComponent implements OnInit {
   timeInterval:any;
   startTime:any;
 
-  constructor(private dataService: DataService, private firestoreService: FirestoreService) { }
+
+
+  constructor(private dataService: DataService, private firestoreService: FirestoreService, private router: Router) { }
 
   ngOnInit(): void {
     this.dataUser = this.dataService.disparador.getValue();
@@ -33,25 +36,20 @@ export class CardOrderComponent implements OnInit {
 
   orderStatus($event:any){
     console.log($event.target.value);
-    if($event.target.value == 'Acepted'){
-      this.start()
+    if($event.target.value == 'Accepted'){
       this.startTime = Date.now();
+      this.start()
       this.firestoreService.updateStatus(this.orders.id,$event.target.value);
-
       //* Guardar startTime en FS
     } else if ($event.target.value == 'Ready'){
-      // console.log('se pausa el cronómetro');
       this.pause()
-
-      //? Guardar date en documento de la colección
     } else {
-      // console.log('reinicia el cronómetro');
       this.time = "00:00"
     }
   }
 
   start(){
-    const btn = document.querySelectorAll('select');
+    const btn = document.querySelector('select');
     // console.log(btn)
     // console.log(this.startTime);
     this.timeInterval = setInterval(() => {

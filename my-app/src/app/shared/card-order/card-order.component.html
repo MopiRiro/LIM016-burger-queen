@@ -18,9 +18,9 @@
       <p class="tiempo"></p>
     </div>
     <div class="card-body">
-      <select class="form-select form-select-sm" *ngIf="roleChef" (change)="orderStatus($event)" >
-        <option value="New" selected>New</option>
-        <option value="Acepted">Acepted</option>
+      <select class="form-select form-select-sm" *ngIf="roleChef" (change)="orderStatus($event)" value={{this.orders.data.status}}>
+        <option value="New">New</option>
+        <option value="Accepted">Accepted</option>
         <option value="Ready">Ready</option>
       </select>
       <p *ngIf="roleWaiter">{{orders.data.status}}</p>
@@ -29,7 +29,6 @@
           <tr>
             <th>Cant</th>
             <th>Detail</th>
-            <!-- <th>Adicional</th> -->
           </tr>
         </thead>
         <tbody *ngFor = "let order of orders.data.products">

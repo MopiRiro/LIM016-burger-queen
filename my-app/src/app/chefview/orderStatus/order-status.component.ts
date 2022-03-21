@@ -38,13 +38,19 @@ export class OrderStatusComponent implements OnInit {
 
   getOrder(){
     this.firestoreService.getOrder().subscribe(data => {
+      this.listOrders = [];
       data.forEach((item) => {
         this.listOrders.push({
           id: item.payload.doc.id,
           data: item.payload.doc.data()
         });
       });
+    })
+    this.sortOrders();
+    console.log(this.listOrders);
+  }
 
+  sortOrders() {
     this.listOrders.sort((a:any,b:any) =>{
       const newA = a.data.date[0].monthDateYear.split('/').reverse().join('-')
       const newB = b.data.date[0].monthDateYear.split('/').reverse().join('-');
@@ -54,8 +60,6 @@ export class OrderStatusComponent implements OnInit {
         return +new Date(newB) - +new Date(newA)
       }
     })
-    })
-    console.log(this.listOrders);
   }
 
 }
