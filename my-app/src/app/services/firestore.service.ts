@@ -24,9 +24,16 @@ export class FirestoreService {
       return this.firestore.collection('orders').snapshotChanges();
     }
 
-  updateStatus(id:string, status:string) {
+  updateStatus(id:string, status:string, startTime: number) {
     return this.firestore.collection('orders').doc(id).update({
-      status: status
+      status: status,
+      startTime : startTime
+    })
+  }
+
+  sendReadyTime(id:string, readyTime:string) {
+    return this.firestore.collection('orders').doc(id).update({
+      readyTime: readyTime,
     })
   }
 }

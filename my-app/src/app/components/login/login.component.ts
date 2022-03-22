@@ -24,7 +24,9 @@ export class LoginComponent implements OnInit {
   Login(){
     const {email,password} = this.user;
     this.authService.login(email,password).then(res =>{
-      //console.log('Se logeo con exito Firebase', res);
+      //* Colección de usuarios
+      //! capturar el id
+      console.log(res?.user?.uid);
     });
     this.Role();
   }
@@ -36,6 +38,13 @@ export class LoginComponent implements OnInit {
 
   ngOnInit(): void {
   }
+
+  /* Role() [
+    //! entrar al FB
+    //! Buscar en a colección user el uid
+    //! Igualar roles
+
+  ] */
 
   Role() {
     this.dataService.getJSON().subscribe(data=>{

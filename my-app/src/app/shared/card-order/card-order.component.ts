@@ -27,33 +27,56 @@ export class CardOrderComponent implements OnInit {
 
   ngOnInit(): void {
     this.dataUser = this.dataService.disparador.getValue();
-    // console.log("este es el usuario en order-place: ", this.dataUser);
     this.roleWaiter = this.dataUser.rol == 'waiter' ? true : false;
     this.roleChef = this.dataUser.rol == 'chef' ? true : false;
-    console.log(this.orders.data.startTime);
-    console.log(this.orders.data.status);
+
+    /* const select = document.querySelector('select');
+    console.log(select);
+    if (select !== null && select.value == 'Accepted') {
+      select.style.backgroundColor = "#ffbbae"
+    } */
+    this.showTime();
   }
 
-  orderStatus($event:any){
+  showTime() {
+    const select = document.querySelector('select');
+    if (select !== null) {
+      if (select.value == 'Accepted') {
+        this.startTime = this.orders.data.startTime;
+        this.start(this.startTime)
+      } else if (select.value == 'Ready') {
+        console.log("este select está listo");
+        //this.pause();
+        this.time = this.orders.data.readyTime;
+      }
+    } else if (select == null) {
+      console.log("Es nulo");;
+    } else {
+      console.log("No está entrando")
+    }
+  }
+
+  orderStatus($event: any){
     console.log($event.target.value);
     if($event.target.value == 'Accepted'){
+      console.log("Accepted the select");
       this.startTime = Date.now();
-      this.start()
-      this.firestoreService.updateStatus(this.orders.id,$event.target.value);
-      //* Guardar startTime en FS
+      this.firestoreService.updateStatus(this.orders.id, $event.target.value, this.startTime);
     } else if ($event.target.value == 'Ready'){
-      this.pause()
+      //! Bloquear el select
+      console.log("pausando");
+      this.stop();
+      this.firestoreService.updateStatus(this.orders.id, $event.target.value, this.startTime);
+      this.firestoreService.sendReadyTime(this.orders.id, this.time);
+      this.time = this.orders.data.readyTime;
     } else {
       this.time = "00:00"
     }
   }
 
-  start(){
-    const btn = document.querySelector('select');
-    // console.log(btn)
-    // console.log(this.startTime);
+  start(orderStartTime: number){
     this.timeInterval = setInterval(() => {
-      this.runningTime = Date.now() - this.startTime;
+      this.runningTime = Date.now() - orderStartTime;
       this.time = this.calculateTime(this.runningTime);
     }, 1000)
   }
@@ -61,17 +84,19 @@ export class CardOrderComponent implements OnInit {
   calculateTime(x:any){
     const totalSeconds = Math.floor(x / 1000);
     const totalMinutes = Math.floor(totalSeconds / 60);
+    const totalHours = Math.floor(totalMinutes / 60);
 
     const displaySeconds = (totalSeconds % 60).toString().padStart(2, "0");
-    const displayMinutes = totalMinutes.toString().padStart(2, "0")
+    const displayMinutes = (totalMinutes & 60).toString().padStart(2, "0");
+    const displayHours = totalHours.toString().padStart(2, "0");
 
-    return `${displayMinutes}:${displaySeconds}`
+    return `${displayHours}:${displayMinutes}:${displaySeconds}`
   }
 
-  pause(){
-    clearInterval(this.timeInterval)
+  stop(){
+    this.time = this.orders.data.readyTime;
+    console.log(this.timeInterval)
   }
-
-
 
 }
+

@@ -45,13 +45,12 @@ export class OrderStatusComponent implements OnInit {
           data: item.payload.doc.data()
         });
       });
+      this.sortOrders(this.listOrders);
     })
-    this.sortOrders();
-    console.log(this.listOrders);
   }
 
-  sortOrders() {
-    this.listOrders.sort((a:any,b:any) =>{
+  sortOrders(arr:any) {
+    arr.sort((a:any,b:any) =>{
       const newA = a.data.date[0].monthDateYear.split('/').reverse().join('-')
       const newB = b.data.date[0].monthDateYear.split('/').reverse().join('-');
       if(newA == newB){
@@ -60,6 +59,7 @@ export class OrderStatusComponent implements OnInit {
         return +new Date(newB) - +new Date(newA)
       }
     })
+    console.log(arr)
   }
 
 }

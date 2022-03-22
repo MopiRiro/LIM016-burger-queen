@@ -18,7 +18,7 @@
       <p class="tiempo"></p>
     </div>
     <div class="card-body">
-      <select class="form-select form-select-sm" *ngIf="roleChef" (change)="orderStatus($event)" value={{this.orders.data.status}}>
+      <select class="form-select form-select-sm" *ngIf="roleChef" (change)="orderStatus($event)" value={{orders.data.status}}>
         <option value="New">New</option>
         <option value="Accepted">Accepted</option>
         <option value="Ready">Ready</option>
@@ -35,7 +35,6 @@
           <tr>
             <th>{{order.amount}}</th>
             <td>{{order.description}}</td>
-            <!-- <td>{{item.data.products.amount}}</td> -->
           </tr>
         </tbody>
       </table>
