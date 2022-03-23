@@ -27,6 +27,7 @@ export class LoginComponent implements OnInit {
       //* Colección de usuarios
       //! capturar el id
       console.log(res?.user?.uid);
+      //! Guardar en localstorage
     });
     this.Role();
   }

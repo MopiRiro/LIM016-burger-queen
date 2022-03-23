@@ -29,30 +29,26 @@ export class CardOrderComponent implements OnInit {
     this.dataUser = this.dataService.disparador.getValue();
     this.roleWaiter = this.dataUser.rol == 'waiter' ? true : false;
     this.roleChef = this.dataUser.rol == 'chef' ? true : false;
-
-    /* const select = document.querySelector('select');
-    console.log(select);
-    if (select !== null && select.value == 'Accepted') {
-      select.style.backgroundColor = "#ffbbae"
-    } */
-    this.showTime();
+    console.log("hola");
+    setTimeout(() => {this.showTime()}, 1);
+    //console.log(this.orders.id);
   }
 
   showTime() {
-    const select = document.querySelector('select');
+    const select = document.getElementById(this.orders.id);
+    console.log("select", select);
+    let selectValue = (<HTMLInputElement>document.getElementById(this.orders.id)).value;
     if (select !== null) {
-      if (select.value == 'Accepted') {
+      if (selectValue == "Accepted") {
         this.startTime = this.orders.data.startTime;
         this.start(this.startTime)
-      } else if (select.value == 'Ready') {
+        select.style.backgroundColor = "#ffbbae";
+      } else if (selectValue == "Ready") {
+        select.style.backgroundColor = "#cddfa0";
         console.log("este select está listo");
-        //this.pause();
+        console.log(this.orders.data.readyTime);
         this.time = this.orders.data.readyTime;
       }
-    } else if (select == null) {
-      console.log("Es nulo");;
-    } else {
-      console.log("No está entrando")
     }
   }
 
@@ -68,16 +64,15 @@ export class CardOrderComponent implements OnInit {
       this.stop();
       this.firestoreService.updateStatus(this.orders.id, $event.target.value, this.startTime);
       this.firestoreService.sendReadyTime(this.orders.id, this.time);
-      this.time = this.orders.data.readyTime;
-    } else {
-      this.time = "00:00"
+      //this.time = "00:08";
     }
-  }
+}
 
   start(orderStartTime: number){
     this.timeInterval = setInterval(() => {
       this.runningTime = Date.now() - orderStartTime;
       this.time = this.calculateTime(this.runningTime);
+      //console.log('timestart: ', this.time);
     }, 1000)
   }
 
@@ -93,9 +88,8 @@ export class CardOrderComponent implements OnInit {
     return `${displayHours}:${displayMinutes}:${displaySeconds}`
   }
 
-  stop(){
-    this.time = this.orders.data.readyTime;
-    console.log(this.timeInterval)
+  stop(): void{
+    clearInterval(this.timeInterval);
   }
 
 }

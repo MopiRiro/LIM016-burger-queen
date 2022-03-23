@@ -59,7 +59,7 @@ export class OrderStatusComponent implements OnInit {
         return +new Date(newB) - +new Date(newA)
       }
     })
-    console.log(arr)
+    //console.log(arr)
   }
 
 }

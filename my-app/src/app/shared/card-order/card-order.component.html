@@ -15,10 +15,9 @@
       <ul>
         <li>Time: {{time}}</li>
       </ul>
-      <p class="tiempo"></p>
     </div>
     <div class="card-body">
-      <select class="form-select form-select-sm" *ngIf="roleChef" (change)="orderStatus($event)" value={{orders.data.status}}>
+      <select id="{{orders.id}}" class="form-select form-select-sm" *ngIf="roleChef" (change)="orderStatus($event)" value={{orders.data.status}}>
         <option value="New">New</option>
         <option value="Accepted">Accepted</option>
         <option value="Ready">Ready</option>
