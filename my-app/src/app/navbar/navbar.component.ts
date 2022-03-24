@@ -26,8 +26,8 @@ export class NavbarComponent implements OnInit {
 
   ngOnInit(): void {
     this.dataUser=this.userService.getUserLoggedIn();
-    this.roleWaiter = this.dataUser.rol == 'waiter' ? true : false;
-    this.roleChef = this.dataUser.rol == 'chef' ? true : false;
+    this.roleWaiter = this.dataUser.role == 'waiter' ? true : false;
+    this.roleChef = this.dataUser.role == 'chef' ? true : false;
   }
 
 }

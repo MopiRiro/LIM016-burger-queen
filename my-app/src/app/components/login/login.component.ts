@@ -54,7 +54,6 @@ export class LoginComponent implements OnInit {
           role: data.get('role'),
         }
         this.userService.setUserLoggedIn(this.user);
-        // console.log(this.user);
       });
       this.Role();
     });    
