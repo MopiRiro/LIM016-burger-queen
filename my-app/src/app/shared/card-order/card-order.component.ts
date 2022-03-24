@@ -30,8 +30,12 @@ export class CardOrderComponent implements OnInit {
     this.roleWaiter = this.dataUser.rol == 'waiter' ? true : false;
     this.roleChef = this.dataUser.rol == 'chef' ? true : false;
     console.log("hola");
-    setTimeout(() => {this.showTime()}, 1);
-    //console.log(this.orders.id);
+
+    if(this.roleChef == true) {
+      setTimeout(() => {this.showTime()}, 1);
+    } else if(this.roleWaiter == true) {
+      setTimeout(() => {this.background()}, 1000);
+    }
   }
 
   showTime() {
@@ -50,6 +54,19 @@ export class CardOrderComponent implements OnInit {
         this.time = this.orders.data.readyTime;
       }
     }
+  }
+
+  background(){
+    const p = document.getElementsByClassName(".waiterStatus");
+    console.log(p);
+    /* const pStyle = document.querySelector<HTMLElement>('p');
+    if(p !== null && pStyle != null){
+      if(p.innerHTML == 'Accepted') {
+        pStyle.style.backgroundColor = "#ffbbae";
+      } else if (p.innerHTML == 'Ready'){
+        pStyle.style.backgroundColor = "#cddfa0";
+      }
+    } */
   }
 
   orderStatus($event: any){
