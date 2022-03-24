@@ -22,7 +22,7 @@
         <option value="Accepted">Accepted</option>
         <option value="Ready">Ready</option>
       </select>
-      <p *ngIf="roleWaiter" class="waiterStatus">{{orders.data.status}}</p>
+      <p *ngIf="roleWaiter" id="{{orders.id}}">{{orders.data.status}}</p>
       <table class="table table-striped table-sm">
         <thead>
           <tr>
