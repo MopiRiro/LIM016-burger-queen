@@ -29,29 +29,44 @@ export class CardOrderComponent implements OnInit {
     this.dataUser=this.userService.getUserLoggedIn();
     this.roleWaiter = this.dataUser.role == 'waiter' ? true : false;
     this.roleChef = this.dataUser.role == 'chef' ? true : false;
-    /* const select = document.querySelector('select');
-    console.log(select);
-    if (select !== null && select.value == 'Accepted') {
-      select.style.backgroundColor = "#ffbbae"
-    } */
-    this.showTime();
+
+    if(this.roleChef == true) {
+      setTimeout(() => {this.showTime()}, 1);
+    } else if(this.roleWaiter == true) {
+      setTimeout(() => {this.background()}, 1);
+    }
   }
 
   showTime() {
-    const select = document.querySelector('select');
+    const select = document.getElementById(this.orders.id);
+    console.log("select", select);
+    let selectValue = (<HTMLInputElement>document.getElementById(this.orders.id)).value;
     if (select !== null) {
-      if (select.value == 'Accepted') {
+      if (selectValue == "Accepted") {
         this.startTime = this.orders.data.startTime;
         this.start(this.startTime)
-      } else if (select.value == 'Ready') {
+        select.style.backgroundColor = "#ffbbae";
+      } else if (selectValue == "Ready") {
+        select.style.backgroundColor = "#cddfa0";
         console.log("este select está listo");
-        //this.pause();
+        console.log(this.orders.data.readyTime);
         this.time = this.orders.data.readyTime;
       }
-    } else if (select == null) {
-      console.log("Es nulo");;
-    } else {
-      console.log("No está entrando")
+    }
+  }
+
+  background(){
+    const p = document.getElementById(this.orders.id);
+    console.log(p);
+    let pText = <HTMLElement> document.getElementById(this.orders.id);
+    console.log(pText.innerText);
+    // const pStyle = document.querySelector<HTMLElement>('p');
+    if(p !== null && p != null){
+      if(p.innerHTML == 'Accepted') {
+        p.style.backgroundColor = "#ffbbae";
+      } else if (p.innerHTML == 'Ready'){
+        p.style.backgroundColor = "#cddfa0";
+      }
     }
   }
 
@@ -67,16 +82,15 @@ export class CardOrderComponent implements OnInit {
       this.stop();
       this.firestoreService.updateStatus(this.orders.id, $event.target.value, this.startTime);
       this.firestoreService.sendReadyTime(this.orders.id, this.time);
-      this.time = this.orders.data.readyTime;
-    } else {
-      this.time = "00:00"
+      //this.time = "00:08";
     }
-  }
+}
 
   start(orderStartTime: number){
     this.timeInterval = setInterval(() => {
       this.runningTime = Date.now() - orderStartTime;
       this.time = this.calculateTime(this.runningTime);
+      //console.log('timestart: ', this.time);
     }, 1000)
   }
 
@@ -92,9 +106,8 @@ export class CardOrderComponent implements OnInit {
     return `${displayHours}:${displayMinutes}:${displaySeconds}`
   }
 
-  stop(){
-    this.time = this.orders.data.readyTime;
-    console.log(this.timeInterval)
+  stop(): void{
+    clearInterval(this.timeInterval);
   }
 
 }
