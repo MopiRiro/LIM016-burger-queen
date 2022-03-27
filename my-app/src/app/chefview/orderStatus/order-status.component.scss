@@ -5,8 +5,8 @@
   margin: 1rem;
   flex-wrap: wrap;  
 }
-.card{
-  margin: 1rem;
+.cardOptions{
+  margin: 1.5rem;
   grid-column: 1 / 2;
 
 }
@@ -23,6 +23,24 @@
 button {
   border: none;
   background: none;
-  color: var(--GreenStrong);
+  color: var(--White);
+}
+
+.list-group-item{
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  background-color: var(--Salmon);
+  padding: 0rem;
+  
+}
+
+fa-icon{
+  color: var(--White);
+  font-size: 3rem;
+}
+
+button {
+  padding: 2rem 3rem;
 }
 
