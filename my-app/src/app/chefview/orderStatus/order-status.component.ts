@@ -68,7 +68,7 @@ export class OrderStatusComponent implements OnInit {
     
     //? filtrar las ordenes de solo estado 'delivered'
     this.listOrdersDelivered = this.listOrders.filter(item => item.data.status == 'Delivered');
-    console.log(this.listOrdersDelivered);
+    // console.log(this.listOrdersDelivered);
     this.listOrders = this.listOrdersDelivered;
     
     

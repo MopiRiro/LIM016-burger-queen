@@ -12,12 +12,13 @@
 }
 .cardsOrders{
   grid-column: 2 / 3;
+  height:30rem;
+  overflow: scroll;
 }
 
 .optionsOrderStatusContainer{
   display: flex;
   flex-direction: column;
-
 }
 
 button {
@@ -37,10 +38,19 @@ button {
 
 fa-icon{
   color: var(--White);
-  font-size: 3rem;
+  font-size: 2rem;
 }
 
 button {
   padding: 2rem 3rem;
 }
 
+@media (min-width: 1025px) { 
+  fa-icon{
+    color: var(--White);
+    font-size: 3.5rem;
+  }
+  .cardsOrders{
+    height:40rem;
+  }
+ }
