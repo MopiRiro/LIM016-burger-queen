@@ -1,7 +1,68 @@
 .order-container {
+  display: grid;
+  grid-template-columns: 15rem 1fr;
+  align-items: stretch;
   margin: 1rem;
+  flex-wrap: wrap;  
+}
+.cardOptions{
+  margin: 1.5rem;
+  grid-column: 1 / 2;
+
+}
+.cardsOrders{
+  grid-column: 2 / 3;
+  height:30rem;
+  overflow: auto;
+}
+
+.cardsOrders::-webkit-scrollbar{
+	width: 0.5rem;
+	// background:var(--GreenStrong);
+}
+
+.cardsOrders::-webkit-scrollbar-thumb{
+	background: var(--Salmon);
+	border-radius: 0.5rem;
+	border-right: 0.5rem solid var(--Salmon);
+	height: 40%;
+}
+
+.optionsOrderStatusContainer{
   display: flex;
-  flex-wrap: wrap;
-  justify-content: center;
+  flex-direction: column;
+}
+
+button {
+  border: none;
+  background: none;
+  color: var(--White);
+}
+
+.list-group-item{
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  background-color: var(--Salmon);
+  padding: 0rem;
   
 }
+
+fa-icon{
+  color: var(--White);
+  font-size: 2rem;
+}
+
+button {
+  padding: 2rem 3rem;
+}
+
+@media (min-width: 1025px) { 
+  fa-icon{
+    color: var(--White);
+    font-size: 3.5rem;
+  }
+  .cardsOrders{
+    height:40rem;
+  }
+ }

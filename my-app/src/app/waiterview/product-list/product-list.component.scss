@@ -36,3 +36,27 @@
   background-color: #e1e0e0a1;
   color: #6c6a6a;
 }
+
+#containerProductList{
+  height: 25rem;
+  overflow: auto;
+}
+
+#containerProductList::-webkit-scrollbar{
+	width: 0.5rem;
+	// background:var(--GreenStrong);
+}
+
+#containerProductList::-webkit-scrollbar-thumb{
+	background: var(--Salmon);
+	border-radius: 0.5rem;
+	border-right: 0.5rem solid var(--Salmon);
+	height: 40%;
+}
+
+
+@media (min-width: 1025px) { 
+  #containerProductList{
+    height: 32rem;
+  }
+ }

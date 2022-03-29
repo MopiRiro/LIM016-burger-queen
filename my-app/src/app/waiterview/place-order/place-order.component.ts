@@ -96,12 +96,12 @@ export class PlaceOrderComponent implements OnInit {
     //fechaCreacion: new Date
     //fechaTerminada: new Date
     let dateDay = new Date().toLocaleDateString();
-    let hourDay = `${new Date().getHours()}`+":"+`${new Date().getMinutes()}`;
+    let hourDay = `${new Date().getHours().toString().padStart(2, "0")}`+":"+`${new Date().getMinutes().toString().padStart(2, "0")}`;
 
     //*Capturamos la fecha y hora
-    this.orderDate.push(new OrderDate(dateDay, hourDay));
+    this.orderDate.push(new OrderDate(dateDay, hourDay.toString().padStart(2, "0")));
 
-    const orderObj =  new Order(this.clientName, parseInt(this.tableNumber), "Nuevo", "00:00", this.nuevo, this.orderDate);
+    const orderObj =  new Order(this.clientName, parseInt(this.tableNumber), "New", 0, "00:00", this.nuevo, this.orderDate);
 
     console.log(orderObj);
     this.firestore.sendOrdeFireStore(orderObj).then(() => {console.log('Orden registrada con éxito!');

@@ -7,77 +7,79 @@
   }
 }
 
-  .order {
-    margin: 0.5rem;
-    width: 20rem;
-    border-radius: 10px;
-    .info {
-      padding-top: 0.5rem;
-      height: 2.5rem;
-      background-color: #94d154;
-      color: white;
-      display: flex;
-      justify-content: space-around;
-      font-family: "Baloo Paaji 2", cursive;
-    }
-    .time {
-      font-size: 0.9rem;
-      text-align: center;
-      display: flex;
-      flex-direction: row;
-      justify-content: space-between;
-      border-bottom: 1px solid grey;
-      padding-top: 0.5rem;
-      align-items: flex-end;
-      ul {
-        margin: 0;
-        margin-bottom: 0.5rem;
-        li {
-          text-align: center;
-        }
+.order {
+  margin: 0.5rem;
+  width: 20rem;
+  border-radius: 10px;
+  .info {
+    padding-top: 0.5rem;
+    height: 2.5rem;
+    background-color: #94d154;
+    color: white;
+    display: flex;
+    justify-content: space-around;
+    font-family: "Baloo Paaji 2", cursive;
+  }
+  .time {
+    font-size: 0.9rem;
+    text-align: center;
+    display: flex;
+    flex-direction: row;
+    justify-content: space-between;
+    border-bottom: 1px solid grey;
+    padding-top: 0.5rem;
+    align-items: flex-end;
+    ul {
+      margin: 0;
+      margin-bottom: 0.5rem;
+      padding-right: 1rem;
+      li {
+        text-align: center;
       }
     }
-    .card-body {
-      .table {
+  }
+  .card-body {
+    .table {
+      border-radius: 0;
+    }
+    .card-title {
+      border-bottom: 1px solid grey;
+    }
+    select {
+      margin-bottom: 0.5rem;
+      color: var(--White);
+      option {
+        text-align: center;
+      }
+    }
+    p {
+      display: flex;
+      justify-content: center;
+    }
+    table {
+      th {
+        font-size: 0.9rem;
+        text-align: center;
         border-radius: 0;
       }
-      .card-title {
-        border-bottom: 1px solid grey;
-      }
-      select {
-        margin-bottom: 0.5rem;
-        option {
-          text-align: center;
-        }
-      }
-      table {
-        th {
-          font-size: 0.9rem;
-          text-align: center;
-          border-radius: 0;
-        }
-        td {
-          font-size: 0.9rem;
-          text-align: center;
-          border-radius: 0;
-        }
+      td {
+        font-size: 0.9rem;
+        text-align: center;
+        border-radius: 0;
       }
     }
   }
+}
 
-  .containerDelivered{
-    display: flex;
-    justify-content: center;
+.containerDelivered {
+  display: flex;
+  justify-content: center;
   .btnDelivered {
-      background-color: var(--GreenLight);
-      border: none;
-      padding: 0.4rem;
-      color: var(--White);
-      border-radius:0.5rem;
-      margin: 0.3rem;
-    }
-    
+    background-color: var(--GreenLight);
+    border: none;
+    padding: 0.4rem;
+    color: var(--White);
+    border-radius: 0.5rem;
+    margin: 0.3rem;
   }
-
-  
- 
+}

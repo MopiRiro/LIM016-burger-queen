@@ -1,7 +1,8 @@
 import { createNgModuleType } from '@angular/compiler/src/render3/r3_module_compiler';
 import { Component, OnInit } from '@angular/core';
-import { DataService } from '../../services/data.service'
+import { faAddressBook, faCheckCircle, faClock, faMemory, faNotEqual, faNotesMedical, faNoteSticky, faThList, faTruck, faUserClock } from '@fortawesome/free-solid-svg-icons';
 import { FirestoreService } from '../../services/firestore.service';
+
 
 @Component({
   selector: 'app-order-status',
@@ -11,6 +12,7 @@ import { FirestoreService } from '../../services/firestore.service';
 export class OrderStatusComponent implements OnInit {
   public listOrders: any[] = [];
   public dataUser: any;
+  public listOrdersDelivered: any[] =[];
   roleChef: boolean = false;
   roleWaiter: boolean = false;
 
@@ -22,31 +24,32 @@ export class OrderStatusComponent implements OnInit {
 
   id:string = '';
 
-  constructor(private dataService: DataService, private firestoreService: FirestoreService ) {
+  faAllOrders = faThList;
+  faOrdersReady = faUserClock;
+  faOrdersDelivered = faCheckCircle;
 
-  }
+  constructor(private firestoreService: FirestoreService ) {}
 
   ngOnInit(): void {
-    this.dataUser = this.dataService.disparador.getValue();
-    // console.log("este es el usuario en order-place: ", this.dataUser);
-    this.roleWaiter = this.dataUser.rol == 'waiter' ? true : false;
-    this.roleChef = this.dataUser.rol == 'chef' ? true : false;
-
     this.getOrder();
 
   }
 
   getOrder(){
     this.firestoreService.getOrder().subscribe(data => {
+      this.listOrders = [];
       data.forEach((item) => {
         this.listOrders.push({
           id: item.payload.doc.id,
           data: item.payload.doc.data()
         });
       });
+      this.sortOrders(this.listOrders);
+    })
+  }
 
-    this.listOrders.sort((a:any,b:any) =>{
-      console.log(a.data.date[0].monthDateYear);
+  sortOrders(arr:any) {
+    arr.sort((a:any,b:any) =>{
       const newA = a.data.date[0].monthDateYear.split('/').reverse().join('-')
       const newB = b.data.date[0].monthDateYear.split('/').reverse().join('-');
       if(newA == newB){
@@ -55,8 +58,20 @@ export class OrderStatusComponent implements OnInit {
         return +new Date(newB) - +new Date(newA)
       }
     })
+    //console.log(arr)
+  }
 
-    })
+  filterDelivered(){
+    //?El array con todas las ordenes
+    // console.log(this.listOrders);
+    // console.log(this.listOrders[0].data.status);
+    
+    //? filtrar las ordenes de solo estado 'delivered'
+    this.listOrdersDelivered = this.listOrders.filter(item => item.data.status == 'Delivered');
+    // console.log(this.listOrdersDelivered);
+    this.listOrders = this.listOrdersDelivered;
+    
+    
   }
 
 }
