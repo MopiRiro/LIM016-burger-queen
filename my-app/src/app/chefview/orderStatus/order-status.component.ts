@@ -2,6 +2,7 @@ import { createNgModuleType } from '@angular/compiler/src/render3/r3_module_comp
 import { Component, OnInit } from '@angular/core';
 import { faAddressBook, faCheckCircle, faClock, faMemory, faNotEqual, faNotesMedical, faNoteSticky, faThList, faTruck, faUserClock } from '@fortawesome/free-solid-svg-icons';
 import { FirestoreService } from '../../services/firestore.service';
+import { PipeOrderStatusPipe } from '../../pipes/pipe-order-status.pipe';
 
 
 @Component({
@@ -13,6 +14,7 @@ export class OrderStatusComponent implements OnInit {
   public listOrders: any[] = [];
   public dataUser: any;
   public listOrdersDelivered: any[] =[];
+  public listOrdersReady: any[] =[];
   roleChef: boolean = false;
   roleWaiter: boolean = false;
 
@@ -67,9 +69,16 @@ export class OrderStatusComponent implements OnInit {
     // console.log(this.listOrders[0].data.status);
 
     //? filtrar las ordenes de solo estado 'delivered'
-    this.listOrdersDelivered = this.listOrders.filter(item => item.data.status == 'Delivered');
+    // this.listOrdersDelivered = this.listOrders.filter(item => item.data.status == 'Delivered');
     // console.log(this.listOrdersDelivered);
-    this.listOrders = this.listOrdersDelivered;
+    // this.listOrders = this.listOrdersDelivered;
+  }
+
+  filterOrdersReady(){
+    // this.listOrdersReady= this.listOrders.filter(item => item.data.status == 'Ready');
+    // console.log(this.listOrdersDelivered);
+    // this.listOrders = this.listOrdersReady;
+    // this.listOrders = PipeOrderStatusPipe.transform('Ready');
 
   }
 

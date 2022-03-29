@@ -38,17 +38,22 @@ export class CardOrderComponent implements OnInit {
   }
 
   showTime() {
-    const select = document.getElementById(this.orders.id);
-    console.log("select", select);
+    const itemOrderStatus = document.getElementById(this.orders.id);
+    console.log("itemOrderStatus", itemOrderStatus);
     let selectValue = (<HTMLInputElement>document.getElementById(this.orders.id)).value;
-    if (select !== null) {
+    if (itemOrderStatus !== null) {
       if (selectValue == "Accepted") {
         this.startTime = this.orders.data.startTime;
         this.start(this.startTime)
-        select.style.backgroundColor = "#ffbbae";
+        itemOrderStatus.style.backgroundColor = "#ffbbae";
       } else if (selectValue == "Ready") {
-        select.style.backgroundColor = "#cddfa0";
+        itemOrderStatus.style.backgroundColor = "#cddfa0";
         console.log("este select está listo");
+        console.log(this.orders.data.readyTime);
+        this.time = this.orders.data.readyTime;
+      } else if (this.orders.data.status == 'Delivered') {
+        itemOrderStatus.style.backgroundColor = "#FFFFFF";
+        console.log("la orden ha sido entregada");
         console.log(this.orders.data.readyTime);
         this.time = this.orders.data.readyTime;
       }
@@ -64,6 +69,9 @@ export class CardOrderComponent implements OnInit {
         p.style.backgroundColor = "#ffbbae";
       } else if (p.innerHTML == 'Ready'){
         p.style.backgroundColor = "#cddfa0";
+      } else if (p.innerHTML == 'Delivered'){
+        p.style.backgroundColor = "#c5c5c5";
+        this.time = this.orders.data.readyTime;
       }
     }
   }
