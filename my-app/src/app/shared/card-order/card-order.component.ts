@@ -51,7 +51,7 @@ export class CardOrderComponent implements OnInit {
         console.log("este select está listo");
         console.log(this.orders.data.readyTime);
         this.time = this.orders.data.readyTime;
-      } 
+      }
     }
   }
 
