@@ -11,13 +11,15 @@ import { NavbarComponent } from './navbar/navbar.component';
 import { AngularFireModule } from '@angular/fire/compat';
 import { environment } from '../environments/environment';
 import { HttpClientModule } from '@angular/common/http';
+// import { PipeOrderStatusPipe } from './pipes/pipe-order-status.pipe';
 
 
 @NgModule({
   declarations: [
     AppComponent,
     LoginComponent,
-    NavbarComponent
+    NavbarComponent,
+    // PipeOrderStatusPipe
   ],
   imports: [
     BrowserModule,
