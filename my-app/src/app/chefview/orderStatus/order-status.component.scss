@@ -13,7 +13,19 @@
 .cardsOrders{
   grid-column: 2 / 3;
   height:30rem;
-  overflow: scroll;
+  overflow: auto;
+}
+
+.cardsOrders::-webkit-scrollbar{
+	width: 0.5rem;
+	// background:var(--GreenStrong);
+}
+
+.cardsOrders::-webkit-scrollbar-thumb{
+	background: var(--Salmon);
+	border-radius: 0.5rem;
+	border-right: 0.5rem solid var(--Salmon);
+	height: 40%;
 }
 
 .optionsOrderStatusContainer{

@@ -39,8 +39,21 @@
 
 #containerProductList{
   height: 25rem;
-  overflow: scroll;
+  overflow: auto;
 }
+
+#containerProductList::-webkit-scrollbar{
+	width: 0.5rem;
+	// background:var(--GreenStrong);
+}
+
+#containerProductList::-webkit-scrollbar-thumb{
+	background: var(--Salmon);
+	border-radius: 0.5rem;
+	border-right: 0.5rem solid var(--Salmon);
+	height: 40%;
+}
+
 
 @media (min-width: 1025px) { 
   #containerProductList{
