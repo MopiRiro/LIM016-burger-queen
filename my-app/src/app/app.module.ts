@@ -11,6 +11,7 @@ import { NavbarComponent } from './navbar/navbar.component';
 import { AngularFireModule } from '@angular/fire/compat';
 import { environment } from '../environments/environment';
 import { HttpClientModule } from '@angular/common/http';
+
 // import { PipeOrderStatusPipe } from './pipes/pipe-order-status.pipe';
 
 
@@ -19,6 +20,7 @@ import { HttpClientModule } from '@angular/common/http';
     AppComponent,
     LoginComponent,
     NavbarComponent,
+
     // PipeOrderStatusPipe
   ],
   imports: [
