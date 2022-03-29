@@ -60,26 +60,6 @@ export class OrderStatusComponent implements OnInit {
         return +new Date(newB) - +new Date(newA)
       }
     })
-    //console.log(arr)
-  }
-
-  filterDelivered(){
-    //?El array con todas las ordenes
-    // console.log(this.listOrders);
-    // console.log(this.listOrders[0].data.status);
-    
-    //? filtrar las ordenes de solo estado 'delivered'
-    // this.listOrdersDelivered = this.listOrders.filter(item => item.data.status == 'Delivered');
-    // console.log(this.listOrdersDelivered);
-    // this.listOrders = this.listOrdersDelivered;    
-  }
-
-  filterOrdersReady(){
-    // this.listOrdersReady= this.listOrders.filter(item => item.data.status == 'Ready');
-    // console.log(this.listOrdersDelivered);
-    // this.listOrders = this.listOrdersReady; 
-    // this.listOrders = PipeOrderStatusPipe.transform('Ready');
-
   }
 
 }

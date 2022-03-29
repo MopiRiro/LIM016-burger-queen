@@ -1,0 +1,4 @@
+
+<div class="col-md-12 justify-content-between  d-flex flex-wrap mx-auto cardsOrders">
+    <app-card-order [orders]="order" *ngFor="let order of listOrders | pipeOrderStatus:'Ready'" class="m-sm-3 mx-auto" id="{{order.id}}"></app-card-order>
+</div>
