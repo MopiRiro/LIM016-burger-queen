@@ -12,5 +12,5 @@ export interface OrderData {
       startTime?: number;
       readyTime?: string;
     }
-  
+
 }
