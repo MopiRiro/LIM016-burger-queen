@@ -16,7 +16,7 @@ export class LoginComponent implements OnInit {
   faCrow = faCrown;
   faUser = faUserGroup;
 
-  
+
    loginForm = {
     email:  '',
     password: ''
@@ -27,7 +27,7 @@ export class LoginComponent implements OnInit {
     email:'',
     name: '',
     role: '',
-  
+
   }
 
   constructor(
@@ -56,21 +56,21 @@ export class LoginComponent implements OnInit {
         this.userService.setUserLoggedIn(this.user);
       });
       this.Role();
-    });    
+    });
   }
 
-  
+
 
   Role() {
     console.log(this.userService.getUserLoggedIn());
     const objUser = this.userService.getUserLoggedIn();
     console.log(objUser.role);
     if(objUser.role === 'chef') {
-          this.router.navigateByUrl("/chef");
+          this.router.navigateByUrl("/chef/allOrders");
     } else if (objUser.role === 'waiter') {
           this.router.navigateByUrl("/waiter")
     }
-    
+
   }
 
 }
