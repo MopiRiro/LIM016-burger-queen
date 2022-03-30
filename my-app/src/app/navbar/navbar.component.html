@@ -10,7 +10,7 @@
     </button>
     <ul class="dropdown-menu" aria-labelledby="dropdownMenuButton1">
       <li><a class="dropdown-item" routerLink="/waiter" *ngIf="roleWaiter">Place Order</a></li>
-      <li><a class="dropdown-item" routerLink="/waiter/order-status" *ngIf="roleWaiter">Order Status</a></li>
+      <li><a class="dropdown-item" routerLink="/waiter/order-status/allOrders" *ngIf="roleWaiter">Order Status</a></li>
       <li><a class="dropdown-item" href="" (click)="logout()">Log Out</a></li>
     </ul>
   </div>

@@ -66,7 +66,7 @@ export class LoginComponent implements OnInit {
     const objUser = this.userService.getUserLoggedIn();
     console.log(objUser.role);
     if(objUser.role === 'chef') {
-          this.router.navigateByUrl("/chef");
+          this.router.navigateByUrl("/chef/allOrders");
     } else if (objUser.role === 'waiter') {
           this.router.navigateByUrl("/waiter")
     }
