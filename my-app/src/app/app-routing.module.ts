@@ -1,6 +1,7 @@
 import { NgModule } from '@angular/core';
 import { RouterModule, Routes } from '@angular/router';
 import { LoginComponent } from './components/login/login.component';
+import { AuthGuard } from './guard/auth.guard';
 import { NavbarComponent } from './navbar/navbar.component';
 
 
@@ -22,7 +23,8 @@ const routes: Routes = [
         path:'',
         loadChildren: () => import('./chefview/chefview.module').then(m => m.ChefviewModule)
       }
-    ]
+    ],
+  canActivate: [AuthGuard]
   },
   {
     path:'waiter',
@@ -36,7 +38,8 @@ const routes: Routes = [
         path:'order-status',
         loadChildren: () => import('./chefview/chefview.module').then(m => m.ChefviewModule)
       }
-    ]
+    ],
+  canActivate: [AuthGuard]
   },
   {
     path:'',
@@ -46,7 +49,8 @@ const routes: Routes = [
         path:'**',
         loadChildren: () => import('./error-view/error-view.module').then(m => m.ErrorViewModule)
       }
-    ]
+    ],
+  canActivate: [AuthGuard]
   }
 ];
 

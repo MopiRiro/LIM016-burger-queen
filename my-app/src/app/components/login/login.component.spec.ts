@@ -6,6 +6,7 @@ import { AngularFireModule } from '@angular/fire/compat';
 import { AngularFirestoreModule } from '@angular/fire/compat/firestore';
 import { RouterTestingModule } from '@angular/router/testing';
 import { environment } from 'src/environments/environment';
+import { CUSTOM_ELEMENTS_SCHEMA } from '@angular/core'
 
 
 
@@ -23,7 +24,8 @@ describe('LoginComponent', () => {
         AngularFireModule.initializeApp(environment.firebaseConfig),
         AngularFirestoreModule
       ],
-      declarations: [ LoginComponent ]
+      declarations: [ LoginComponent ],
+      schemas: [ CUSTOM_ELEMENTS_SCHEMA ],
     })
     .compileComponents();
   });

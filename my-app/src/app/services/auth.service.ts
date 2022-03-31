@@ -18,7 +18,7 @@ export class AuthService {
     private ngZone: NgZone,
     public afauth: AngularFireAuth,
     private router: Router,
-    public userservice: UserService) { 
+    public userservice: UserService) {
 
       this.checkLocalStorage();
   }
@@ -63,7 +63,7 @@ export class AuthService {
       this.afauth.signOut().then(() => {
         this.router.navigate(['login']);
       });
-  
+
     }
 
 }
