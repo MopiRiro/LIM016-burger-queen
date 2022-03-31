@@ -4,7 +4,7 @@ export interface OrderData {
     id: string;
     data : {
       clientName: string;
-      table: string;
+      table: number;
       products: Array<Product>;
       date: Array<OrderDate>;
       total?: number;
