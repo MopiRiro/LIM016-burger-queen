@@ -20,11 +20,11 @@
   // background:var(--GreenStrong);
 }
 
-.cardsOrders::-webkit-scrollbar-thumb {
-  background: var(--Salmon);
-  border-radius: 0.5rem;
-  border-right: 0.5rem solid var(--Salmon);
-  height: 40%;
+.cardsOrders::-webkit-scrollbar-thumb{
+	background: var(--Salmon);
+	border-radius: 0.5rem;
+	border-right: 0.5rem solid var(--Salmon);
+	height: 10%;
 }
 
 .optionsOrderStatusContainer {
