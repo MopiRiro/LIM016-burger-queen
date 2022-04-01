@@ -23,7 +23,7 @@ Makis Queen es un aplicativo web para un restaurante
 - <a href="https://angular.io/">Angular</a>
 - <a href="https://www.typescriptlang.org/">TypeScript</a>
 - <a href="https://firebase.google.com/docs?authuser=0&hl=es">Firebase</a>
-- <a href="https://getbootstrap.com/docs/5.1/getting-started/introduction/">Bootstrap</a>: 
+- <a href="https://getbootstrap.com/docs/5.1/getting-started/introduction/">Bootstrap</a> 
 - <a href="https://sass-lang.com/documentation">SASS</a>
 - <a href="https://www.netlify.com/">Netlify</a>
 
@@ -64,9 +64,9 @@ Para el despliegue de nuestra aplicación utilizamos NETLIFY el cual te permite 
 ### Luz Torres Villavicencio
   * <code><a href = "https://www.linkedin.com/in/luz-elanny-torres-villavicencio-590745183/"> <img height="30" src="https://img.icons8.com/fluent/48/000000/linkedin.png"/></a></code>
 
-  * <code><a href = "https://github.com/ElannyTorres"> <img height="30" src="https://cdn-icons-png.flaticon.com/512/25/25231.png"/> </a></code>
+  * <code><a href = "https://github.com/ElannyTorres"> <img height="30" src="https://icones.pro/wp-content/uploads/2021/06/icone-github-grise.png"/> </a></code>
 
 ### Pilar Rivera Romero
   * <code><a href = "https://www.linkedin.com/in/pilar-rivera-romero/"> <img height="30" src="https://img.icons8.com/fluent/48/000000/linkedin.png"/> </a></code>
 
-  * <code><a href = "https://github.com/MopiRiro"> <img height="30" src="https://cdn-icons-png.flaticon.com/512/25/25231.png"/> </a></code>
+  * <code><a href = "https://github.com/MopiRiro"> <img height="30" src="https://icones.pro/wp-content/uploads/2021/06/icone-github-grise.png"/> </a></code>
