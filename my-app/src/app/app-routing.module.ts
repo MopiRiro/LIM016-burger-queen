@@ -18,17 +18,18 @@ const routes: Routes = [
   {
   path:'chef',
   component: NavbarComponent,
+  canActivate: [AuthGuard],
   children: [
       {
         path:'',
         loadChildren: () => import('./chefview/chefview.module').then(m => m.ChefviewModule)
       }
-    ],
-  canActivate: [AuthGuard]
+    ]
   },
   {
     path:'waiter',
     component: NavbarComponent,
+    canActivate: [AuthGuard],
     children: [
       {
         path:'',
@@ -38,19 +39,18 @@ const routes: Routes = [
         path:'order-status',
         loadChildren: () => import('./chefview/chefview.module').then(m => m.ChefviewModule)
       }
-    ],
-  canActivate: [AuthGuard]
+    ]
   },
   {
     path:'',
     component: NavbarComponent,
+    canActivate: [AuthGuard],
     children: [
       {
         path:'**',
         loadChildren: () => import('./error-view/error-view.module').then(m => m.ErrorViewModule)
       }
-    ],
-  canActivate: [AuthGuard]
+    ]
   }
 ];
 

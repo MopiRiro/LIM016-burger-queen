@@ -4,6 +4,7 @@ import * as firebase from 'firebase/app';
 import { Router } from '@angular/router';
 import { User } from '../interfaces/user';
 import { UserService } from './user.service';
+import Swal from 'sweetalert2';
 
 
 @Injectable({
@@ -11,7 +12,7 @@ import { UserService } from './user.service';
 })
 export class AuthService {
 
-   user:  User = {};
+  user:  User = {};
 
   constructor(
     // public user: User,
@@ -39,6 +40,13 @@ export class AuthService {
         this.userservice.setUserLoggedIn(this.user); // set user data from firebase on local storage
       } else {
         console.log('Not authenticated');
+        /* Swal.fire({
+          icon: 'error',
+          title: 'Oops...',
+          text: 'You don\'t have permission to view this page',
+          footer: 'Please Login'
+        }) */
+        //window.location.hash = '/login';
       }
     });
   }

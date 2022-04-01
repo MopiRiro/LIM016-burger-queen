@@ -11,7 +11,7 @@ export class UserService {
   constructor() { }
 
    // Set data on localStorage
-   setUserLoggedIn(user: User) {
+  setUserLoggedIn(user: User) {
     localStorage.setItem('user', JSON.stringify(user));
     console.log('saved on localStorage');
   }

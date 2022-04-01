@@ -41,8 +41,8 @@ export class LoginComponent implements OnInit {
   }
 
   Login(){
-   const {email,password} = this.loginForm;
-    this.authService.login(email,password).then(res =>{
+    const {email,password} = this.loginForm;
+      this.authService.login(email,password).then(res =>{
       //* Peticion Colección de usuarios
       //! capturar el id
       console.log(res?.user?.uid);
