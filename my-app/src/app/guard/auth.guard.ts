@@ -23,10 +23,8 @@ export class AuthGuard implements CanActivate {
 
       this.checkLogin();
 
-      if (this.roleChef) {
+      if (this.roleChef || this.roleWaiter) {
         return true;
-      } else if (this.roleWaiter){
-        return true
       } else {
         Swal.fire({
           icon: 'error',
