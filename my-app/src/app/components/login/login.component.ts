@@ -16,7 +16,7 @@ export class LoginComponent implements OnInit {
   faCrow = faCrown;
   faUser = faUserGroup;
 
-  
+
    loginForm = {
     email:  '',
     password: ''
@@ -27,7 +27,7 @@ export class LoginComponent implements OnInit {
     email:'',
     name: '',
     role: '',
-  
+
   }
 
   constructor(
@@ -41,8 +41,8 @@ export class LoginComponent implements OnInit {
   }
 
   Login(){
-   const {email,password} = this.loginForm;
-    this.authService.login(email,password).then(res =>{
+    const {email,password} = this.loginForm;
+      this.authService.login(email,password).then(res =>{
       //* Peticion Colección de usuarios
       //! capturar el id
       console.log(res?.user?.uid);
@@ -56,10 +56,10 @@ export class LoginComponent implements OnInit {
         this.userService.setUserLoggedIn(this.user);
       });
       this.Role();
-    });    
+    });
   }
 
-  
+
 
   Role() {
     console.log(this.userService.getUserLoggedIn());
@@ -70,7 +70,7 @@ export class LoginComponent implements OnInit {
     } else if (objUser.role === 'waiter') {
           this.router.navigateByUrl("/waiter")
     }
-    
+
   }
 
 }

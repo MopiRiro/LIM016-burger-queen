@@ -4,6 +4,7 @@ import * as firebase from 'firebase/app';
 import { Router } from '@angular/router';
 import { User } from '../interfaces/user';
 import { UserService } from './user.service';
+import Swal from 'sweetalert2';
 
 
 @Injectable({
@@ -11,14 +12,14 @@ import { UserService } from './user.service';
 })
 export class AuthService {
 
-   user:  User = {};
+  user:  User = {};
 
   constructor(
     // public user: User,
     private ngZone: NgZone,
     public afauth: AngularFireAuth,
     private router: Router,
-    public userservice: UserService) { 
+    public userservice: UserService) {
 
       this.checkLocalStorage();
   }
@@ -39,6 +40,7 @@ export class AuthService {
         this.userservice.setUserLoggedIn(this.user); // set user data from firebase on local storage
       } else {
         console.log('Not authenticated');
+        //window.location.hash = '/login';
       }
     });
   }
@@ -63,7 +65,7 @@ export class AuthService {
       this.afauth.signOut().then(() => {
         this.router.navigate(['login']);
       });
-  
+
     }
 
 }

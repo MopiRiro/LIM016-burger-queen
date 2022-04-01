@@ -53,7 +53,7 @@ export class CardOrderComponent implements OnInit {
         this.time = this.orders.data.readyTime;
       } else if (this.orders.data.status == 'Delivered') {
         itemOrderStatus.style.backgroundColor = "#c5c5c5";
-        console.log("la orden ha sido entregada"); 
+        console.log("la orden ha sido entregada");
         console.log(this.orders.data.readyTime);
         this.time = this.orders.data.readyTime;
       }

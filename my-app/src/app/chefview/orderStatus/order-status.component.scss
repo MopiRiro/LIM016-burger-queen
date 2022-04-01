@@ -3,22 +3,21 @@
   grid-template-columns: 15rem 1fr;
   align-items: stretch;
   margin: 1rem;
-  flex-wrap: wrap;  
+  flex-wrap: wrap;
 }
-.cardOptions{
+.cardOptions {
   margin: 1.5rem;
   grid-column: 1 / 2;
-
 }
-.cardsOrders{
+.cardsOrders {
   grid-column: 2 / 3;
-  height:30rem;
+  height: 30rem;
   overflow: auto;
 }
 
-.cardsOrders::-webkit-scrollbar{
-	width: 0.5rem;
-	// background:var(--GreenStrong);
+.cardsOrders::-webkit-scrollbar {
+  width: 0.5rem;
+  // background:var(--GreenStrong);
 }
 
 .cardsOrders::-webkit-scrollbar-thumb{
@@ -28,7 +27,7 @@
 	height: 10%;
 }
 
-.optionsOrderStatusContainer{
+.optionsOrderStatusContainer {
   display: flex;
   flex-direction: column;
 }
@@ -39,16 +38,15 @@ button {
   color: var(--White);
 }
 
-.list-group-item{
+.list-group-item {
   display: flex;
   flex-direction: column;
   align-items: center;
   background-color: var(--Salmon);
   padding: 0rem;
-  
 }
 
-fa-icon{
+fa-icon {
   color: var(--White);
   font-size: 2rem;
 }
@@ -57,12 +55,12 @@ button {
   padding: 2rem 3rem;
 }
 
-@media (min-width: 1025px) { 
-  fa-icon{
+@media (min-width: 1025px) {
+  fa-icon {
     color: var(--White);
     font-size: 3.5rem;
   }
-  .cardsOrders{
-    height:40rem;
+  .cardsOrders {
+    height: 40rem;
   }
- }
+}
