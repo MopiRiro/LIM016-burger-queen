@@ -1,0 +1,143 @@
+{
+    "productos":[
+                {
+                    "id":"p01",
+                    "description":"makis maracuya",
+                    "precio" : "23",
+                    "img":"https://cdn.cuponidad.pe/images/Deals/akita-makis1.jpg",
+                    "tipo":"principal",
+                    "menu":["Personal"]
+                },
+                {
+                    "id":"p02",
+                    "description":"makis california",
+                    "precio" : "23",
+                    "img":"https://cdn.shopify.com/s/files/1/0076/3962/9895/products/Maki_California.jpg?v=1567027232",
+                    "tipo":"principal",
+                    "menu":["Personal"]
+
+                },
+                {
+                    "id":"p03",
+                    "description":"makis parrillero",
+                    "precio" : "23",
+                    "img":"https://images.rappi.pe/products/maki_parrillero13-1573081516720.png",
+                    "tipo":"principal",
+                    "menu":["Personal"]
+
+                },
+                {
+                    "id":"p04",
+                    "description":"makis acevichado",
+                    "precio" : "23",
+                    "img":"http://compras.cuponidad.pe/images/Deals/makis2deivery.jpg",
+                    "tipo":"principal",
+                    "menu":["Personal"]
+
+                },
+                {
+                    "id":"p05",
+                    "description":"makis pollo brasa",
+                    "precio" : "23",
+                    "img":"https://images.rappi.pe/products/480756-1595447739313.png",
+                    "tipo":"principal",
+                    "menu":["Personal"]
+
+                },
+                {
+                    "id":"p06",
+                    "description":"makis lomo saltado",
+                    "precio" : "23",
+                    "img":"http://compras.cuponidad.pe/images/Deals/6875pizza3.jpg",
+                    "tipo":"principal",
+                    "menu":["Personal"]
+
+                },
+                {
+                    "id":"p07",
+                    "description":"Paquete 24 + 6 alitas",
+                    "precio" : "45",
+                    "img":"https://cdn.cuponidad.pe/images/Deals/makisdraon07.jpg",
+                    "tipo":"principal",
+                    "menu":["Promociones"]
+                },
+                {
+                    "id":"p08",
+                    "description":"Promocion Makis 2x3 ",
+                    "precio" : "28",
+                    "img":"http://compras.cuponidad.pe/images/Deals/nikkei234.jpg",
+                    "tipo":"principal",
+                    "menu":["Promociones"]
+                },
+                {
+                    "id":"p09",
+                    "description":"Promo: 2 Sandwich Furai",
+                    "precio" : "35",
+                    "img":"https://i.ytimg.com/vi/5l6is4V10nk/maxresdefault.jpg",
+                    "tipo":"principal",
+                    "menu":["Promociones"]
+
+                },
+                {
+                    "id":"p10",
+                    "description":"Paquete 84 + 6 alitas",
+                    "precio" : "112",
+                    "img":"https://images.rappi.pe/products/395781-1603121389666.jpg",
+                    "tipo":"principal",
+                    "menu":["Promociones"]
+
+                },
+                {
+                    "id":"p11",
+                    "description":"Paquete 48 + 6 alitas",
+                    "precio" : "74",
+                    "img":"https://media-cdn.tripadvisor.com/media/photo-s/08/41/db/2c/makis.jpg",
+                    "tipo":"principal",
+                    "menu":["Promociones"]
+
+                },
+                {
+                    "id":"p12",
+                    "description":"Paquete 36",
+                    "precio" : "54",
+                    "img":"https://elcomercio.pe/resizer/jBwvhQrXGXbMwDjGCMpTmGQ9huY=/1200x900/smart/filters:format(jpeg):quality(75)/arc-anglerfish-arc2-prod-elcomercio.s3.amazonaws.com/public/7IY7UOGP25FZFAKNAR5CJV5TPA.jpg",
+                    "tipo":"principal",
+                    "menu":["Promociones"]
+
+                },
+                {
+                    "id":"p13",
+                    "description":"Paquete 48",
+                    "precio" : "62",
+                    "img":"https://www.checkealo.pe/files/productos/6133/3b7c785ee6407175dfbb2d888c0064af.jpg",
+                    "tipo":"principal",
+                    "menu":["Promociones"]
+
+                },
+                {
+                    "id":"p14",
+                    "description":"Salsa ostion",
+                    "precio" : "4",
+                    "img":"https://cocina-casera.com/wp-content/uploads/2018/02/salsa-de-ostras-2.jpg",
+                    "tipo":"adicional",
+                    "menu":["Promociones","Personal"]
+
+                },
+                {
+                    "id":"p15",
+                    "description":"Salsa acevichada",
+                    "precio" : "4",
+                    "img":"https://assets.niusushi.cl/production/images/786f3c69-e6c7-48aa-b92e-b37a9a4e97af/medium/SALSA_ACEVICHADA_BLANCA_2.jpg?1481926264",
+                    "tipo":"adicional",
+                    "menu":["Promociones","Personal"]
+                },
+                {
+                    "id":"p16",
+                    "description":"Salsa teriyaki",
+                    "precio" : "4",
+                    "img":"https://cdn2.cocinadelirante.com/sites/default/files/styles/gallerie/public/salsa-teriyaki-casera-dulce.jpg",
+                    "tipo":"adicional",
+                    "menu":["Promociones","Personal"]
+                }
+    ]
+}
