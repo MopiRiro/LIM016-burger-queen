@@ -40,12 +40,6 @@ export class AuthService {
         this.userservice.setUserLoggedIn(this.user); // set user data from firebase on local storage
       } else {
         console.log('Not authenticated');
-        /* Swal.fire({
-          icon: 'error',
-          title: 'Oops...',
-          text: 'You don\'t have permission to view this page',
-          footer: 'Please Login'
-        }) */
         //window.location.hash = '/login';
       }
     });
