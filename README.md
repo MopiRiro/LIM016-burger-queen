@@ -82,15 +82,18 @@ Para el despliegue de nuestra aplicación utilizamos NETLIFY el cual te permite 
 
 ### Luz Torres Villavicencio
 
+  * <code><a href = "https://www.linkedin.com/in/luz-elanny-torres-villavicencio-590745183/"> <img height="30" src="https://img.icons8.com/fluent/48/000000/linkedin.png"/></a></code>
+
   * <code><a href = "https://github.com/ElannyTorres"> <img height="30" src="https://icones.pro/wp-content/uploads/2021/06/icone-github-grise.png"/> </a></code>
   
-  * <code><a href = "https://www.linkedin.com/in/luz-elanny-torres-villavicencio-590745183/"> <img height="30" src="https://img.icons8.com/fluent/48/000000/linkedin.png"/></a></code>
+  
 
 
 ### Pilar Rivera Romero
 
+ * <code><a href = "https://www.linkedin.com/in/pilar-rivera-romero/"> <img height="30" src="https://img.icons8.com/fluent/48/000000/linkedin.png"/> </a></code>
+
   * <code><a href = "https://github.com/MopiRiro"> <img height="30" src="https://icones.pro/wp-content/uploads/2021/06/icone-github-grise.png"/> </a></code>
   
-  * <code><a href = "https://www.linkedin.com/in/pilar-rivera-romero/"> <img height="30" src="https://img.icons8.com/fluent/48/000000/linkedin.png"/> </a></code>
-
+  
 
