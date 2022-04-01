@@ -32,7 +32,6 @@ export class AuthGuard implements CanActivate {
           text: 'You don\'t have permission to view this page',
           footer: 'Please Login'
         })
-        //window.alert('You don\'t have permission to view this page');
         window.location.hash = '/login';
         return false;
     }
@@ -41,8 +40,9 @@ export class AuthGuard implements CanActivate {
   checkLogin(): void {
     this.dataUser = this.userService.getUserLoggedIn();
     if (this.dataUser) {
-    this.roleWaiter = this.dataUser.role == 'waiter' ? true : false;
-    this.roleChef = this.dataUser.role == 'chef' ? true : false;}
+      this.roleWaiter = this.dataUser.role == 'waiter' ? true : false;
+      this.roleChef = this.dataUser.role == 'chef' ? true : false;
+    }
   }
 
 }
