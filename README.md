@@ -13,6 +13,9 @@
 
 ## 1. Introducción
 
+Aplicación web para restaurante de makis, donde se toma pedidos a través de una tablet y enviarlos a cocina para que se preparen de
+forma ordenada y eficiente. El proyecto consta de la interfaz (cliente) y se trabajó con Firebase como base de datos para las cuentas y pedidos realizados.
+
 ## 2. Resumen del proyecto
 
 Makis Queen es un plataforma para la gestión de pedidos, con vistas para los siguientes roles: chef y mesero. El objetivo es brindar una herramienta con la(s) funcionalidad(es) requeridas.
