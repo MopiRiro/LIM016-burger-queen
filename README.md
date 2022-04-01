@@ -15,7 +15,16 @@
 
 ## 2. Resumen del proyecto
 
-Makis Queen es un aplicativo web para un restaurante
+Makis Queen es un plataforma para la gestión de pedidos, con vistas para los siguientes roles: chef y mesero. El objetivo es brindar una herramienta con la(s) funcionalidad(es) requeridas.
+
+Consta de una vista inicial para el ingreso a la plataforma con su respectivo correo. En el caso de nuestra plataforma se usaron dos correo:
+
+- chef@makisqueen.com
+- waiter@makisqueen.com
+  Ambos con la siguiente contraseña: 123456.
+
+Para el rol de mesero cuenta con la vista: Place Order, en la que podemos hacer el filtrado del tipo de menú disponible, así como un carrito de compra al costa del menú para mejorar la visualización del resumen de la orden. En el cual podemos agregar un producto, editar la cantidad de este y/o eliminarlo. De la misma forma, podemos agregar el nombre del cliente y la mesa respectiva ello para poder guardar el pedido. Como plus adicional podemos observar el subtotal, igv y el total del pedido a medida que vamos modificándolo.
+El mesero cuenta con otra vista disponible: Order Status, en la cual puede observar el estado de los pedidos que se hayan realizado, de la misma forma puede escoger ver todos los pedidos en general, los listos para servir y los ya entregados.
 
 ## 3. Consideraciones técnicas
 
