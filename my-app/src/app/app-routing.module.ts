@@ -1,8 +1,10 @@
+import { ChefGuard } from './guard/chef.guard';
 import { NgModule } from '@angular/core';
 import { RouterModule, Routes } from '@angular/router';
 import { LoginComponent } from './components/login/login.component';
 import { AuthGuard } from './guard/auth.guard';
 import { NavbarComponent } from './navbar/navbar.component';
+import { WaiterGuard } from './guard/waiter.guard';
 
 
 const routes: Routes = [
@@ -18,7 +20,10 @@ const routes: Routes = [
   {
   path:'chef',
   component: NavbarComponent,
-  canActivate: [AuthGuard],
+  canActivate: [
+    AuthGuard,
+    ChefGuard
+  ],
   children: [
       {
         path:'',
@@ -29,7 +34,10 @@ const routes: Routes = [
   {
     path:'waiter',
     component: NavbarComponent,
-    canActivate: [AuthGuard],
+    canActivate: [
+      AuthGuard,
+      WaiterGuard
+    ],
     children: [
       {
         path:'',
