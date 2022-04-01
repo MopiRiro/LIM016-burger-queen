@@ -76,7 +76,7 @@ Integramos ATOMIC DESIGN como metodología de diseño del producto, esto nos per
 
 Para el despliegue de nuestra aplicación utilizamos NETLIFY el cual te permite crear, alojar y mantener tu sitio web con implementación continua.
 
-[AppDesplegada]()
+[Makis Queen](https://resplendent-palmier-ebb9d4.netlify.app/login)
 
 ## 7. Autoras
 
@@ -87,7 +87,6 @@ Para el despliegue de nuestra aplicación utilizamos NETLIFY el cual te permite 
   * <code><a href = "https://github.com/ElannyTorres"> <img height="30" src="https://icones.pro/wp-content/uploads/2021/06/icone-github-grise.png"/> </a></code>
   
   
-
 
 ### Pilar Rivera Romero
 
